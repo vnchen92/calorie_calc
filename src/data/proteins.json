@@ -33,7 +33,7 @@
       "calcium": 0,
       "iron": 2
    },
-   "Chicken Patty**": {
+   "Chicken Patty": {
       "servingSize": 71,
       "calories": 80,
       "totalFat": 3,
@@ -203,7 +203,7 @@
       "calcium": 0,
       "iron": 10
    },
-   "Pastrami**": {
+   "Pastrami": {
       "servingSize": 57,
       "calories": 130,
       "totalFat": 10,
@@ -305,7 +305,7 @@
       "calcium": 0,
       "iron": 6
    },
-   "Subway Club® Meats": {
+   "Subway Club Meats": {
       "servingSize": 78,
       "calories": 90,
       "totalFat": 3,
@@ -339,7 +339,7 @@
       "calcium": 0,
       "iron": 2
    },
-   "Veggie Patty**": {
+   "Veggie Patty": {
       "servingSize": 85,
       "calories": 170,
       "totalFat": 9,
