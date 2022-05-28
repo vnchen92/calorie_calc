@@ -17,7 +17,7 @@ In addition, this project will include
 
 
 ## Wire Frames
-![](./src/assets/Homepage.png)
+![](assets/Homepage.png)
 - Nav links include links to this project's Github repo and my LinkedIn.
 - Form will include brand icons and text boxes for calories, protein, carb, and fat.
 - On bottom left, meal items will appear on a plate once options are generated
