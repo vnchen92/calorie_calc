@@ -6,9 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./dist/main.css">
     <script src="./dist/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <title>NEED A TITLE</title>
 </head>
 <body>
+    <img src="./assets/baquette.png" alt="">
     <header class="nav-container">
         <nav class="actual-nav">
             <h1 class="nav-title">NEED A TITLE</h1>
@@ -19,8 +21,13 @@
             </ul>
         </nav>
     </header>
-    <main id="main">
-        <img id="baquette" src="./assets/baquette.png">
-    </main>
+    <section id="canvas">
+        <div id="container-options">
+            <canvas id="canvas-options"></canvas>
+        </div>
+        <div id="container-chart">
+            <canvas id="canvas-chart"></canvas>
+        </div>
+    </section>
 </body>
 </html>

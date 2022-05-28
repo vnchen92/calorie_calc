@@ -19,18 +19,22 @@
   
   body {
     background: repeating-linear-gradient(
-      45deg,
+      30deg,
       #16c35b,
       #16c35b 35px,
       #f9f35a 35px,
-      #f9f35a 50px
-    );
+      #f9f35a 50px);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+
   }
 
   img {
     max-width: 100%;
     height: auto;
-    position: center;
+    position: relative;
+    z-index: -1;
   }
 
   header {
@@ -51,4 +55,8 @@
   ul {
     display: flex;
     background-color: purple;
+  }
+
+  section {
+    display: flex;
   }

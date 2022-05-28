@@ -1,5 +1,5 @@
 {
-   "6 Artisan Flatbread": {
+   "Artisan Flatbread": {
       "servingSize": 78,
       "calories": 220,
       "totalFat": 4,
@@ -16,7 +16,7 @@
       "calcium": 0,
       "iron": 15
    },
-   "6 Artisan Italian Bread": {
+   "Artisan Italian Bread": {
       "servingSize": 65,
       "calories": 160,
       "totalFat": 2,
@@ -33,7 +33,7 @@
       "calcium": 0,
       "iron": 10
    },
-   "6 Hearty Multigrain Bread": {
+   "Hearty Multigrain Bread": {
       "servingSize": 71,
       "calories": 190,
       "totalFat": 2,
@@ -50,7 +50,7 @@
       "calcium": 0,
       "iron": 8
    },
-   "6 Italian Herbs & Cheese": {
+   "Italian Herbs & Cheese": {
       "servingSize": 76,
       "calories": 200,
       "totalFat": 4,
@@ -67,7 +67,7 @@
       "calcium": 6,
       "iron": 10
    },
-   "6 Jalapeno Cheddar Bread": {
+   "Jalapeno Cheddar Bread": {
       "servingSize": 76,
       "calories": 190,
       "totalFat": 4,
@@ -186,7 +186,7 @@
       "calcium": 0,
       "iron": 6
    },
-   "6 Hero Bread": {
+   "Hero Bread": {
       "servingSize": 75,
       "calories": 100,
       "totalFat": 5,
