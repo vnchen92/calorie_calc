@@ -6,3 +6,65 @@
 
 // @import "styles/css_reset.css";
 // @import "styles/index.css";
+
+html, body, section, article,
+h1, h2, p, strong, em, a {
+  margin: 0;
+  border: 0;
+  padding: 0;
+  outline: 0;
+  box-sizing: inherit;
+  font: inherit;
+  text-decoration: inherit;
+  text-align: inherit;
+  color: inherit;
+  background: transparent;
+}
+
+li {
+  list-style: none;
+}
+
+body {
+  background: repeating-linear-gradient(
+    30deg,
+    #16c35b,
+    #16c35b 35px,
+    #f9f35a 35px,
+    #f9f35a 50px);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  position: relative;
+  z-index: -1;
+}
+
+header {
+  display: flex;
+  background-color: azure;
+}
+
+nav {
+  display: flex;
+  background-color: blue;
+}
+
+h1 {
+  display: flex;
+  background-color: red;
+}
+
+ul.nav-rest {
+  display: flex;
+  background-color: purple;
+}
+
+section {
+  display: flex;
+}

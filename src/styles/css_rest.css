@@ -11,3 +11,7 @@ h1, h2, p, strong, em, a {
   color: inherit;
   background: transparent;
 }
+
+li {
+  list-style: none;
+}
