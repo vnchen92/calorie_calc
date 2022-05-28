@@ -32,3 +32,23 @@
     height: auto;
     position: center;
   }
+
+  header {
+    display: flex;
+    background-color: azure;
+  }
+
+  nav {
+    display: flex;
+    background-color: blue;
+  }
+
+  h1 {
+    display: flex;
+    background-color: red;
+  }
+
+  ul {
+    display: flex;
+    background-color: purple;
+  }
