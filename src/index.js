@@ -1,6 +1,7 @@
+const leftSide = require("./scripts/options.js");
 
 document.addEventListener("DOMContentLoaded", () => {
-    console.log("check check");
+    console.log("leftSide");
 });
 
 

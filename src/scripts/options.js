@@ -1,9 +1,24 @@
 const breads = require("../data/bread.json");
 
-// let optionsCanvas = document.getElementbyId("canvas-options");
-// let ctx = optionsCanvas.getContext("2d");
 
-// let ul = document.createElement("ul");
+
+
+ 
+
+    let ul = document.createElement("ul");
+    for (let key in breads){
+        let li = document.createElement("li")
+        li.innerText = key;
+        ul.appendChild(li);
+    }
+
+    
+
+    //optionsCanvas.addEventListener("click", functiontoupdatebarchart);
+        //if clicked, have an outline around it and update chart
+        //if unclicked, remove outline and update chart
+
+
 
 //if you click this bread, you will get its protein, carb, fat
 function addToChart(bread){
