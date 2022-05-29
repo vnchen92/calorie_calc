@@ -10,6 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
             label: 'Calories',
             data: [0, 0, 0],
             backgroundColor: ['red', 'orange', 'beige'],
+            borderWidth: 20
         }]
     };
     const config = {
@@ -27,14 +28,23 @@ document.addEventListener("DOMContentLoaded", () => {
                         size: 25
                     }
                 }
+                // scales: {
+                //     xAxes: [{
+                //       display: false,
+                //       ticks: {
+                //         min: 0
+                //       }
+                //     }],
+                //     yAxes: [{
+                //       display: false
+                //     }],
+                // }
             }
         }
     };
     const ctx = document.getElementById("canvas-chart").getContext("2d");
     const myChart = new Chart(ctx, config);
 
-    console.log(myChart.data);
-    console.log(myChart.data.labels);
         // let myChart = document.getElementById("canvas-chart");
         // let ctx = myChart.getContext("2d");
 
@@ -52,19 +62,15 @@ document.addEventListener("DOMContentLoaded", () => {
         //     config
         // });
 
-        // Chart.defaults.font.family = 'Lato';
-        // Chart.defaults.font.size = '12';
-        // Chart.defaults.font.color = '#777';
+        Chart.defaults.font.family = 'Lato';
+        Chart.defaults.font.size = '12';
+        Chart.defaults.font.color = '#777';
         
         
         // const myChart = new Chart(
         //    document.getElementById("canvas-chart").getContext("2d"),
         //    config
         //);
-        updateChart().then(response =>{
-            myChart.config.data = response;
-            myChart.update();
-        })
 
         async function updateChart(){
             let liCollection = document.getElementsByClassName("option");
@@ -94,6 +100,10 @@ document.addEventListener("DOMContentLoaded", () => {
                 })
             }
         }
+        updateChart().then(response =>{
+            myChart.config.data = response;
+            myChart.update();
+        })
 });
 
 

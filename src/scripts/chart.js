@@ -1,18 +1,8 @@
 const subwayData = require("./data.js");
 
-// const calLabels = [ 'Protein', 'Carb', 'Fat'];
-// const calCount = {
-//     labels: calLabels,
-//     datasets: [{
-//         label: 'Calories',
-//         data: [0, 0, 0],
-//         backgroundColor: ['red', 'orange', 'beige'],
-//     }]
-// };
+// const calLabels = ['Protein', 'Carb', 'Fat'];
 
-
-
-// export let calorieCount = new Chart(ctx, {
+// let calorieCount = new Chart(ctx, {
 //     type: 'bar',
 //     data: {
 //         labels: ['Protein', 'Carb', 'Fat'],
@@ -41,8 +31,6 @@ const subwayData = require("./data.js");
 //         }
 //     }
 // });
-
-// const calLabels = [ 'Protein', 'Carb', 'Fat'];
 
 // const calCount = {
 //     labels: calLabels,

@@ -24,36 +24,51 @@ body {
   background: url(../assets/baquette.png), repeating-linear-gradient(35deg, #16c35b, #16c35b 35px, #f9f35a 35px, #f9f35a 50px);
   background-size: contain;
   background-repeat: no-repeat;
-  background-position: center;
+  background-position: bottom;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 canvas {
-  background-color: maroon;
+  background-color: white;
 }
 
-.nav-container {
+.all-breads {
+  width: 60px;
+  height: auto;
+}
+
+.title-container {
   display: flex;
   align-items: center;
-  justify-content: right;
-  background-color: azure;
+  justify-content: center;
 }
 
-.actual-nav {
+.title {
   display: flex;
-  width: 60%;
+}
+
+.mine-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mine {
+  display: flex;
+  width: 40%;
+  justify-content: space-evenly;
+  align-items: baseline;
+}
+
+.icon-container {
+  display: flex;
+  width: 16%;
   justify-content: space-between;
-  align-items: center;
-  background-color: blue;
 }
 
-h1 {
-  display: flex;
-  background-color: red;
-}
-
-.nav-rest {
-  display: flex;
-  background-color: purple;
+li > a > img {
+  width: 40px;
+  height: auto;
 }
 
 div.canvas-and-options {
@@ -65,7 +80,6 @@ div.canvas-and-options {
   flex-wrap: wrap;
   justify-content: space-around;
   align-items: center;
-  background-color: pink;
 }
 
 div.container-chart {
@@ -77,7 +91,6 @@ ul.options {
   grid-template-columns: 100px 100px 100px 100px 100px 100px;
   column-gap: 5px;
   row-gap: 5px;
-  background-color: aqua;
 }
 
 li.option {
@@ -86,5 +99,5 @@ li.option {
   border-radius: 30%;
   align-items: center;
   text-align: center;
-  background-color: aquamarine;
+  font-size: 10px;
 }
