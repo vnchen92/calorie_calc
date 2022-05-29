@@ -1,14 +1,42 @@
 const breads = require("./data/bread.json");
 //const {updateChart} = require("./scripts/options.js");
-let {calCount} = require("./scripts/chart.js");
+//const {config, calCount, calLabels} = require("./scripts/chart.js");
 
 document.addEventListener("DOMContentLoaded", () => {
-        let myChart = document.getElementById("canvas-chart");
-        let ctx = myChart.getContext("2d");
+    const calLabels = ['Protein', 'Carb', 'Fat'];
+    const calCount = {
+        labels: calLabels,
+        datasets: [{
+            label: 'Calories',
+            data: [0, 0, 0],
+            backgroundColor: ['red', 'orange', 'beige'],
+        }]
+    };
+    const config = {
+        type: 'bar',
+        data: calCount,
+        options: {
+            plugins: {
+                legend: {
+                    display: false
+                },
+                title: {
+                    display: true,
+                    text: 'Current Calorie Count',
+                    font: {
+                        size: 25
+                    }
+                }
+            }
+        }
+    };
+    const ctx = document.getElementById("canvas-chart").getContext("2d");
+    const myChart = new Chart(ctx, config);
 
-        Chart.defaults.font.family = 'Lato';
-        Chart.defaults.font.size = '12';
-        Chart.defaults.font.color = '#777';
+    console.log(myChart.data);
+    console.log(myChart.data.labels);
+        // let myChart = document.getElementById("canvas-chart");
+        // let ctx = myChart.getContext("2d");
 
         // const calLabels = [ 'Protein', 'Carb', 'Fat'];
         // const calCount = {
@@ -19,51 +47,52 @@ document.addEventListener("DOMContentLoaded", () => {
         //         backgroundColor: ['red', 'orange', 'beige'],
         //     }]
         // };
+    
+        // let calorieCount = new Chart(ctx, {
+        //     config
+        // });
 
-        let calorieCount = new Chart(ctx, {
-            type: 'bar',
-            data: calCount,
-            options: {
-                plugins: {
-                    legend: {
-                        display: false
-                    },
-                    title: {
-                        display: true,
-                        text: 'Current Calorie Count',
-                        font: {
-                            size: 25
-                        }
-                    }
-                }
-            }
-        });
-
+        // Chart.defaults.font.family = 'Lato';
+        // Chart.defaults.font.size = '12';
+        // Chart.defaults.font.color = '#777';
+        
+        
         // const myChart = new Chart(
         //    document.getElementById("canvas-chart").getContext("2d"),
         //    config
         //);
-        let liCollection = document.getElementsByClassName("option");
-        let datasetObj = calCount.datasets[0];
-    
-        for (let i = 0; i < liCollection.length; i++){
-            let li = liCollection[i];
-            li.addEventListener("click", e => {
-                let liInnerText = li.innerText;
-                let nameOfBread = breads[liInnerText];
-                if (li.getAttribute("clicked") === "no"){
-                    li.setAttribute("clicked", "yes");
-                    datasetObj.data[0] += nameOfBread.protein;
-                    datasetObj.data[1] += nameOfBread.carb;
-                    datasetObj.data[2] += nameOfBread.fat;
-                    //need to find out how to render new chart
-                } else {
-                    li.setAttribute("clicked", "no");
-                    datasetObj.data[0] -= nameOfBread.protein;
-                    datasetObj.data[1] -= nameOfBread.carb;
-                    datasetObj.data[2] -= nameOfBread.fat;
-                }
-            })
+        updateChart().then(response =>{
+            myChart.config.data = response;
+            myChart.update();
+        })
+
+        async function updateChart(){
+            let liCollection = document.getElementsByClassName("option");
+            let datasetObj = calCount.datasets[0];
+        
+            for (let i = 0; i < liCollection.length; i++){
+                let li = liCollection[i];
+                li.addEventListener("click", e => {
+                    let liInnerText = li.innerText;
+                    let nameOfBread = breads[liInnerText];
+                    if (li.getAttribute("clicked") === "no"){
+                        li.setAttribute("clicked", "yes");
+                        datasetObj.data[0] += nameOfBread.protein;
+                        datasetObj.data[1] += nameOfBread.carb;
+                        datasetObj.data[2] += nameOfBread.totalFat;
+                        let response = datasetObj.data;
+                        return response;
+                    } else {
+                        li.setAttribute("clicked", "no");
+                        datasetObj.data[0] -= nameOfBread.protein;
+                        datasetObj.data[1] -= nameOfBread.carb;
+                        datasetObj.data[2] -= nameOfBread.totalFat;
+                        let response = datasetObj.data;
+                        console.log(response);
+                        return response;
+                    }
+                })
+            }
         }
 });
 

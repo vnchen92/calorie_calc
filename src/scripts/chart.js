@@ -1,14 +1,14 @@
 const subwayData = require("./data.js");
 
-const calLabels = [ 'Protein', 'Carb', 'Fat'];
-let calCount = {
-    labels: calLabels,
-    datasets: [{
-        label: 'Calories',
-        data: [0, 0, 0],
-        backgroundColor: ['red', 'orange', 'beige'],
-    }]
-};
+// const calLabels = [ 'Protein', 'Carb', 'Fat'];
+// const calCount = {
+//     labels: calLabels,
+//     datasets: [{
+//         label: 'Calories',
+//         data: [0, 0, 0],
+//         backgroundColor: ['red', 'orange', 'beige'],
+//     }]
+// };
 
 
 
@@ -70,6 +70,6 @@ let calCount = {
 //             }
 //         }
 //     }
-// }
+// };
 
-module.exports = {calCount}
+//module.exports = {config, calCount, calLabels}
