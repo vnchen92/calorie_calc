@@ -1,33 +1,33 @@
 const breads = require("./data/bread.json");
 //const {updateChart} = require("./scripts/options.js");
-//const {config, calCount, calLabels} = require("./scripts/chart.js");
+const {config, calCount, calLabels} = require("./scripts/chart.js");
 
 document.addEventListener("DOMContentLoaded", () => {
-    const calLabels = ['Protein', 'Carb', 'Fat'];
-    const calCount = {
-        labels: calLabels,
-        datasets: [{
-            label: 'Calories',
-            data: [0, 0, 0],
-            backgroundColor: ['red', 'orange', 'beige'],
-            borderWidth: 20
-        }]
-    };
-    const config = {
-        type: 'bar',
-        data: calCount,
-        options: {
-            plugins: {
-                legend: {
-                    display: false
-                },
-                title: {
-                    display: true,
-                    text: 'Current Calorie Count',
-                    font: {
-                        size: 25
-                    }
-                }
+    // const calLabels = ['Protein', 'Carb', 'Fat'];
+    // const calCount = {
+    //     labels: calLabels,
+    //     datasets: [{
+    //         label: 'Calories',
+    //         data: [0, 0, 0],
+    //         backgroundColor: ['red', 'orange', 'beige'],
+    //         borderWidth: 20
+    //     }]
+    // };
+    // const config = {
+    //     type: 'bar',
+    //     data: calCount,
+    //     options: {
+    //         plugins: {
+    //             legend: {
+    //                 display: false
+    //             },
+    //             title: {
+    //                 display: true,
+    //                 text: 'Current Calorie Count',
+    //                 font: {
+    //                     size: 25
+    //                 }
+    //             }
                 // scales: {
                 //     xAxes: [{
                 //       display: false,
@@ -39,12 +39,18 @@ document.addEventListener("DOMContentLoaded", () => {
                 //       display: false
                 //     }],
                 // }
-            }
-        }
-    };
+    //         }
+    //     }
+    // };
     const ctx = document.getElementById("canvas-chart").getContext("2d");
+    ctx.canvas.width  = 500;
+    ctx.canvas.height = 300;
     const myChart = new Chart(ctx, config);
 
+    Chart.defaults.font.family = 'Lato';
+    Chart.defaults.font.size = '12';
+    Chart.defaults.font.color = '#777';
+    
         // let myChart = document.getElementById("canvas-chart");
         // let ctx = myChart.getContext("2d");
 
@@ -61,10 +67,6 @@ document.addEventListener("DOMContentLoaded", () => {
         // let calorieCount = new Chart(ctx, {
         //     config
         // });
-
-        Chart.defaults.font.family = 'Lato';
-        Chart.defaults.font.size = '12';
-        Chart.defaults.font.color = '#777';
         
         
         // const myChart = new Chart(
@@ -74,7 +76,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         async function updateChart(){
             let liCollection = document.getElementsByClassName("option");
-            let datasetObj = calCount.datasets[0];
+            let datasetObj = myChart.config.data.datasets[0];
         
             for (let i = 0; i < liCollection.length; i++){
                 let li = liCollection[i];
@@ -87,21 +89,21 @@ document.addEventListener("DOMContentLoaded", () => {
                         datasetObj.data[1] += nameOfBread.carb;
                         datasetObj.data[2] += nameOfBread.totalFat;
                         let response = datasetObj.data;
-                        return response;
+                        return myChart.update();
                     } else {
                         li.setAttribute("clicked", "no");
                         datasetObj.data[0] -= nameOfBread.protein;
                         datasetObj.data[1] -= nameOfBread.carb;
                         datasetObj.data[2] -= nameOfBread.totalFat;
                         let response = datasetObj.data;
-                        console.log(response);
-                        return response;
+                        return myChart.update();
                     }
                 })
             }
         }
         updateChart().then(response =>{
-            myChart.config.data = response;
+            // myChart.config.data = response;
+            console.log(response);
             myChart.update();
         })
 });
