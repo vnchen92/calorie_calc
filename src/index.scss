@@ -39,6 +39,8 @@ body {
 }
 
 img {
+  position: absolute;
+  z-index: -1;
   max-width: 100%;
   height: auto;
   position: relative;
@@ -47,11 +49,16 @@ img {
 
 header {
   display: flex;
+  align-items: center;
+  justify-content: right;
   background-color: azure;
 }
 
 nav {
   display: flex;
+  width: 60%;
+  justify-content: space-between;
+  align-items: center;
   background-color: blue;
 }
 
@@ -67,4 +74,27 @@ ul.nav-rest {
 
 section {
   display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  background-color: pink;
+}
+
+div.container-chart {
+  display: flex;
+}
+
+ul.options {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  background-color: aqua;
+  width: 50%;
+  height: auto;
+}
+
+li.option {
+  display: flex;
+  background-color: aquamarine;
 }

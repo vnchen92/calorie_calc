@@ -1,5 +1,6 @@
-const leftSide = require("./scripts/options.js");
-const {calCount} = require("./scripts/chart.js");
+const breads = require("./data/bread.json");
+//const {updateChart} = require("./scripts/options.js");
+let {calCount} = require("./scripts/chart.js");
 
 document.addEventListener("DOMContentLoaded", () => {
         let myChart = document.getElementById("canvas-chart");
@@ -42,6 +43,28 @@ document.addEventListener("DOMContentLoaded", () => {
         //    document.getElementById("canvas-chart").getContext("2d"),
         //    config
         //);
+        let liCollection = document.getElementsByClassName("option");
+        let datasetObj = calCount.datasets[0];
+    
+        for (let i = 0; i < liCollection.length; i++){
+            let li = liCollection[i];
+            li.addEventListener("click", e => {
+                let liInnerText = li.innerText;
+                let nameOfBread = breads[liInnerText];
+                if (li.getAttribute("clicked") === "no"){
+                    li.setAttribute("clicked", "yes");
+                    datasetObj.data[0] += nameOfBread.protein;
+                    datasetObj.data[1] += nameOfBread.carb;
+                    datasetObj.data[2] += nameOfBread.fat;
+                    //need to find out how to render new chart
+                } else {
+                    li.setAttribute("clicked", "no");
+                    datasetObj.data[0] -= nameOfBread.protein;
+                    datasetObj.data[1] -= nameOfBread.carb;
+                    datasetObj.data[2] -= nameOfBread.fat;
+                }
+            })
+        }
 });
 
 

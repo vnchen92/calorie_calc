@@ -1,7 +1,7 @@
 const subwayData = require("./data.js");
 
 const calLabels = [ 'Protein', 'Carb', 'Fat'];
-const calCount = {
+let calCount = {
     labels: calLabels,
     datasets: [{
         label: 'Calories',
