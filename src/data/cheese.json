@@ -16,24 +16,7 @@
       "calcium": 4,
       "iron": 0
    },
-   "Fresh Mozzarella": {
-      "servingSize": 17,
-      "calories": 40,
-      "totalFat": 3,
-      "satFat": 2,
-      "transFat": 0,
-      "chol": 10,
-      "sodium": 55,
-      "carb": 0,
-      "dietaryFiber": 0,
-      "sugar": 0,
-      "protein": 3,
-      "vitA": 0,
-      "vitC": 0,
-      "calcium": 5,
-      "iron": 0
-   },
-   "Monterey Cheddar, Shredded": {
+   "Monterey Cheddar": {
       "servingSize": 14,
       "calories": 50,
       "totalFat": 5,
@@ -50,7 +33,7 @@
       "calcium": 8,
       "iron": 0
    },
-   "Mozzarella, Shredded": {
+   "Mozzarella": {
       "servingSize": 14,
       "calories": 45,
       "totalFat": 4,
@@ -67,7 +50,7 @@
       "calcium": 6,
       "iron": 0
    },
-   "Parmesan Grated": {
+   "Parmesan": {
       "servingSize": 1,
       "calories": 5,
       "totalFat": 0,

@@ -1,38 +1,32 @@
-const { ModuleFilenameHelpers } = require("webpack");
 const breads = require("../data/bread.json");
-let {calCount} = require("./chart.js");
 
-// function updateChart(){
-//     let liCollection = document.getElementsByClassName(".option");
-//     let datasetObj = calCount.datasets[0];
+const getData = async function updateChart(chart){
+    let liCollection = document.getElementsByClassName("option");
+    let datasetObj = chart.config.data.datasets[0];
 
-//     liCollection.forEach(li => {
-//         li.addEventListener("click", e => {
-//             let liInnerText = li.innerText;
-//             let nameOfBread = breads.liInnerText;
-//             if (li.getAttribute("clicked") === no){
-//                 li.setAttribute("clicked", "yes");
-//                 datasetObj.data[0] += nameOfBread.protein;
-//                 datasetObj.data[1] += nameOfBread.carb;
-//                 datasetObj.data[2] += nameOfBread.fat;
-//             } else {
-//                 li.setAttribute("clicked", "no");
-//                 datasetObj.data[0] -= nameOfBread.protein;
-//                 datasetObj.data[1] -= nameOfBread.carb;
-//                 datasetObj.data[2] -= nameOfBread.fat;
-//             }
-//         })
-//     })
-// }
+    for (let i = 0; i < liCollection.length; i++){
+        let li = liCollection[i];
+        li.addEventListener("click", e => {
+            let liInnerText = li.innerText;
+            let nameOfBread = breads[liInnerText];
+            if (li.getAttribute("clicked") === "no"){
+                li.setAttribute("clicked", "yes");
+                datasetObj.data[0] += (nameOfBread.protein * 4);
+                datasetObj.data[1] += (nameOfBread.carb * 4);
+                datasetObj.data[2] += (nameOfBread.totalFat * 9);
+                return chart.update();
+            } else {
+                li.setAttribute("clicked", "no");
+                datasetObj.data[0] -= (nameOfBread.protein * 4);
+                datasetObj.data[1] -= (nameOfBread.carb * 4);
+                datasetObj.data[2] -= (nameOfBread.totalFat * 9);
+                return chart.update();
+            }
+        })
+    }
+}
 
-// module.exports = {updateChart};
-
-
-    
-
-    //optionsCanvas.addEventListener("click", functiontoupdatebarchart);
-        //if clicked, have an outline around it and update chart
-        //if unclicked, remove outline and update chart
+module.exports = {getData};
 
 
 

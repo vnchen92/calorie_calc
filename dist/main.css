@@ -37,6 +37,11 @@ canvas {
   height: auto;
 }
 
+.all-cheese {
+  width: 40px;
+  height: auto;
+}
+
 .title-container {
   display: flex;
   align-items: center;
@@ -93,11 +98,19 @@ ul.options {
   row-gap: 5px;
 }
 
-li.option {
+li.option, li.cheese-options {
   display: flex;
   border: 1px solid yellow;
   border-radius: 30%;
   align-items: center;
   text-align: center;
   font-size: 10px;
+  background-color: aquamarine;
+}
+
+ul.cheese-options {
+  display: grid;
+  grid-template-columns: 70px 70px 70px 70px 70px 70px 70px;
+  column-gap: 5px;
+  background-color: aqua;
 }
