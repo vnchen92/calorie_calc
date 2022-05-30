@@ -50,10 +50,10 @@ exports.config = {
     }
 };
 
-exports.updateChart = (chart) => {
-    let liCollection = document.getElementsByClassName("option");
-    let datasetObj = chart.config.data.datasets[0];
+let liCollection = document.getElementsByClassName("option");
 
+exports.updateChart = (chart) => {
+    let datasetObj = chart.config.data.datasets[0];
     for (let i = 0; i < liCollection.length; i++){
         let li = liCollection[i];
         li.addEventListener("click", e => {
@@ -78,8 +78,12 @@ exports.updateChart = (chart) => {
 
 exports.clearChart = (chart) => {
     let liClear = document.querySelector(".clear-button");
+    let datasetObj = chart.config.data.datasets[0];
     liClear.addEventListener("click", e => {
-        let datasetObj = chart.config.data.datasets[0];
+        for (let i = 0; i < liCollection.length; i++){
+            let li = liCollection[i];
+            li.setAttribute("clicked", "no");
+        }
         datasetObj.data[0] = 0;
         datasetObj.data[1] = 0;
         datasetObj.data[2] = 0;
