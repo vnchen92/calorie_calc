@@ -1,43 +1,10 @@
-const subwayData = require("./data.js");
-
 const calLabels = ['Protein', 'Carb', 'Fat'];
-
-// let calorieCount = new Chart(ctx, {
-//     type: 'bar',
-//     data: {
-//         labels: ['Protein', 'Carb', 'Fat'],
-//         datasets: [{
-//             label: 'Calories',
-//             data: [
-//                 0, 0, 0
-//             ],
-//             backgroundColor: [
-//                 'red', 'orange', 'beige'
-//             ]
-//         }]
-//     },
-//     options: {
-//         plugins: {
-//             legend: {
-//                 display: false
-//             },
-//             title: {
-//                 display: true,
-//                 text: 'Current Calorie Count',
-//                 font: {
-//                     size: 25
-//                 }
-//             }
-//         }
-//     }
-// });
 
 const calCount = {
     labels: calLabels,
     datasets: [{
-        yAxisID: 'Calories',
         data: [0, 0, 0],
-        backgroundColor: ['red', 'orange', 'beige']
+        backgroundColor: ['beige', 'green', 'yellow']
     }]
 };
 
@@ -46,8 +13,17 @@ const config = {
     data: calCount,
     options: {
         scales: {
+            x: {
+                ticks: {
+                    
+                }
+            },
             y: {
-                max: 3000
+                ticks: {
+                    
+                },
+                max: 1500,
+                beginAtZero: true
             },
         },
         plugins: {
@@ -56,10 +32,17 @@ const config = {
             },
             title: {
                 display: true,
-                text: 'Current Calorie Count',
+                text: 'Current Calories',
                 font: {
-                    size: 25
+                    size: 15
                 }
+            },
+            tooltip: {
+                yAlign: 'bottom'
+                //displayColors: false,
+                // callbacks: {
+
+                // }
             }
         }
     }

@@ -1,6 +1,6 @@
 const breads = require("./data/bread.json");
 //const {updateChart} = require("./scripts/options.js");
-const {config, calCount, calLabels} = require("./scripts/chart.js");
+const {config} = require("./scripts/chart.js");
 
 document.addEventListener("DOMContentLoaded", () => {
     // const calLabels = ['Protein', 'Carb', 'Fat'];
@@ -47,9 +47,9 @@ document.addEventListener("DOMContentLoaded", () => {
     ctx.canvas.height = 300;
     const myChart = new Chart(ctx, config);
 
-    Chart.defaults.font.family = 'Lato';
-    Chart.defaults.font.size = '12';
-    Chart.defaults.font.color = '#777';
+    // myChart.defaults.font.family = 'Arial';
+    // myChart.defaults.font.size = '12';
+    // myChart.defaults.font.color = '777';
     
         // let myChart = document.getElementById("canvas-chart");
         // let ctx = myChart.getContext("2d");
@@ -85,17 +85,17 @@ document.addEventListener("DOMContentLoaded", () => {
                     let nameOfBread = breads[liInnerText];
                     if (li.getAttribute("clicked") === "no"){
                         li.setAttribute("clicked", "yes");
-                        datasetObj.data[0] += nameOfBread.protein;
-                        datasetObj.data[1] += nameOfBread.carb;
-                        datasetObj.data[2] += nameOfBread.totalFat;
-                        let response = datasetObj.data;
+                        datasetObj.data[0] += (nameOfBread.protein * 4);
+                        datasetObj.data[1] += (nameOfBread.carb * 4);
+                        datasetObj.data[2] += (nameOfBread.totalFat * 9);
+                        //let response = datasetObj.data;
                         return myChart.update();
                     } else {
                         li.setAttribute("clicked", "no");
-                        datasetObj.data[0] -= nameOfBread.protein;
-                        datasetObj.data[1] -= nameOfBread.carb;
-                        datasetObj.data[2] -= nameOfBread.totalFat;
-                        let response = datasetObj.data;
+                        datasetObj.data[0] -= (nameOfBread.protein * 4);
+                        datasetObj.data[1] -= (nameOfBread.carb * 4);
+                        datasetObj.data[2] -= (nameOfBread.totalFat * 9);
+                        //let response = datasetObj.data;
                         return myChart.update();
                     }
                 })
@@ -103,7 +103,6 @@ document.addEventListener("DOMContentLoaded", () => {
         }
         updateChart().then(response =>{
             // myChart.config.data = response;
-            console.log(response);
             myChart.update();
         })
 });
