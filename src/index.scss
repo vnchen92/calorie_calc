@@ -43,22 +43,22 @@ body {
 }
 
 canvas {
-  background-color: white;
+  background-color: rgb(195, 185, 126);
+  background-blend-mode: lighten;
 }
 
 .all-breads, .all-cheese, .all-meat {
-  width: 60px;
+  width: 45px;
   height: auto;
 }
 
-// .all-cheese {
-//   width: 40px;
-//   height: auto;
-// }
+header {
+  height: 100px;
+}
 
 .title-container {
   display: flex;
-  align-items: center;
+  align-items: flex-end;
   justify-content: center;
 }
 
@@ -90,10 +90,6 @@ li > a > img {
   height: auto;
 }
 
-div.canvas-and-options {
-  display: block;
-}
-
 .canvas-and-options {
   display: flex;
   flex-wrap: wrap;
@@ -110,6 +106,14 @@ ul.options {
   grid-template-columns: 100px 100px 100px 100px 100px 100px;
   column-gap: 5px;
   row-gap: 5px;
+}
+
+.option:hover {
+  background-color: rgb(222, 232, 115);
+}
+
+li[clicked="yes"] {
+  border: 2px solid #07652c;
 }
 
 li.option {
