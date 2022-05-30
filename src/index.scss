@@ -46,15 +46,15 @@ canvas {
   background-color: white;
 }
 
-.all-breads {
+.all-breads, .all-cheese, .all-meat {
   width: 60px;
   height: auto;
 }
 
-.all-cheese {
-  width: 40px;
-  height: auto;
-}
+// .all-cheese {
+//   width: 40px;
+//   height: auto;
+// }
 
 .title-container {
   display: flex;
@@ -112,7 +112,7 @@ ul.options {
   row-gap: 5px;
 }
 
-li.option, li.cheese-options {
+li.option {
   display: flex;
   border: 1px solid yellow;
   border-radius: 30%;
@@ -120,11 +120,4 @@ li.option, li.cheese-options {
   text-align: center;
   font-size: 10px;
   background-color: aquamarine;
-}
-
-ul.cheese-options {
-  display: grid;
-  grid-template-columns: 70px 70px 70px 70px 70px 70px 70px;
-  column-gap: 5px;
-  background-color: aqua;
 }

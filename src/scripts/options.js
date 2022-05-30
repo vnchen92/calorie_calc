@@ -1,6 +1,6 @@
-const breads = require("../data/bread.json");
+const allItems = require("./data.js");
 
-const getData = async function updateChart(chart){
+async function updateChart(chart){
     let liCollection = document.getElementsByClassName("option");
     let datasetObj = chart.config.data.datasets[0];
 
@@ -8,25 +8,23 @@ const getData = async function updateChart(chart){
         let li = liCollection[i];
         li.addEventListener("click", e => {
             let liInnerText = li.innerText;
-            let nameOfBread = breads[liInnerText];
+            let nameOfItem = allItems[liInnerText];
             if (li.getAttribute("clicked") === "no"){
                 li.setAttribute("clicked", "yes");
-                datasetObj.data[0] += (nameOfBread.protein * 4);
-                datasetObj.data[1] += (nameOfBread.carb * 4);
-                datasetObj.data[2] += (nameOfBread.totalFat * 9);
+                datasetObj.data[0] += (nameOfItem.protein * 4);
+                datasetObj.data[1] += (nameOfItem.carb * 4);
+                datasetObj.data[2] += (nameOfItem.totalFat * 9);
                 return chart.update();
             } else {
                 li.setAttribute("clicked", "no");
-                datasetObj.data[0] -= (nameOfBread.protein * 4);
-                datasetObj.data[1] -= (nameOfBread.carb * 4);
-                datasetObj.data[2] -= (nameOfBread.totalFat * 9);
+                datasetObj.data[0] -= (nameOfItem.protein * 4);
+                datasetObj.data[1] -= (nameOfItem.carb * 4);
+                datasetObj.data[2] -= (nameOfItem.totalFat * 9);
                 return chart.update();
             }
         })
     }
 }
-
-module.exports = {getData};
 
 
 

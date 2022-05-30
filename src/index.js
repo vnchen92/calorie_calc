@@ -1,6 +1,5 @@
-const breads = require("./data/bread.json");
-const {getData} = require("./scripts/options.js");
 const {config} = require("./scripts/chart.js");
+const {getData} = require("./scripts/options.js");
 
 document.addEventListener("DOMContentLoaded", () => {
     const ctx = document.getElementById("canvas-chart").getContext("2d");
@@ -8,8 +7,9 @@ document.addEventListener("DOMContentLoaded", () => {
     ctx.canvas.height = 300;
     const myChart = new Chart(ctx, config);
 
-    updataChart(myChart)
+    updateChart(myChart)
         .then(response =>{
+            console.log(here);
             myChart.update();
     })
     // async function updateChart(){

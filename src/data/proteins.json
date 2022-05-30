@@ -1,5 +1,5 @@
 {
-   "Bacon (2 strips)": {
+   "Bacon": {
       "servingSize": 15,
       "calories": 80,
       "totalFat": 6,
@@ -118,7 +118,7 @@
       "calcium": 0,
       "iron": 2
    },
-   "Grilled Chicken, Buffalo": {
+   "Buffalo Chicken": {
       "servingSize": 99,
       "calories": 90,
       "totalFat": 2,
@@ -135,7 +135,7 @@
       "calcium": 0,
       "iron": 4
    },
-   "Grilled Chicken, Teriyaki Glazed": {
+   "Teriyaki Glazed Chicken": {
       "servingSize": 85,
       "calories": 100,
       "totalFat": 2,
@@ -220,7 +220,7 @@
       "calcium": 0,
       "iron": 8
    },
-   "Pepperoni, (3 slices)": {
+   "Pepperoni": {
       "servingSize": 18,
       "calories": 80,
       "totalFat": 7,
