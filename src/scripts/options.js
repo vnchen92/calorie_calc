@@ -1,8 +1,8 @@
 const allItems = require("./data.js");
 
-async function updateChart(chart){
+async function updateChart(){
     let liCollection = document.getElementsByClassName("option");
-    let datasetObj = chart.config.data.datasets[0];
+    let datasetObj = myChart.config.data.datasets[0];
 
     for (let i = 0; i < liCollection.length; i++){
         let li = liCollection[i];
@@ -14,13 +14,13 @@ async function updateChart(chart){
                 datasetObj.data[0] += (nameOfItem.protein * 4);
                 datasetObj.data[1] += (nameOfItem.carb * 4);
                 datasetObj.data[2] += (nameOfItem.totalFat * 9);
-                return chart.update();
+                return myChart.update();
             } else {
                 li.setAttribute("clicked", "no");
                 datasetObj.data[0] -= (nameOfItem.protein * 4);
                 datasetObj.data[1] -= (nameOfItem.carb * 4);
                 datasetObj.data[2] -= (nameOfItem.totalFat * 9);
-                return chart.update();
+                return myChart.update();
             }
         })
     }
