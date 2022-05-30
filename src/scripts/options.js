@@ -1,30 +1,30 @@
-const allItems = require("./data.js");
+// const allItems = require("./data.js");
 
-async function updateChart(){
-    let liCollection = document.getElementsByClassName("option");
-    let datasetObj = myChart.config.data.datasets[0];
+// async function updateChart(){
+//     let liCollection = document.getElementsByClassName("option");
+//     let datasetObj = myChart.config.data.datasets[0];
 
-    for (let i = 0; i < liCollection.length; i++){
-        let li = liCollection[i];
-        li.addEventListener("click", e => {
-            let liInnerText = li.innerText;
-            let nameOfItem = allItems[liInnerText];
-            if (li.getAttribute("clicked") === "no"){
-                li.setAttribute("clicked", "yes");
-                datasetObj.data[0] += (nameOfItem.protein * 4);
-                datasetObj.data[1] += (nameOfItem.carb * 4);
-                datasetObj.data[2] += (nameOfItem.totalFat * 9);
-                return myChart.update();
-            } else {
-                li.setAttribute("clicked", "no");
-                datasetObj.data[0] -= (nameOfItem.protein * 4);
-                datasetObj.data[1] -= (nameOfItem.carb * 4);
-                datasetObj.data[2] -= (nameOfItem.totalFat * 9);
-                return myChart.update();
-            }
-        })
-    }
-}
+//     for (let i = 0; i < liCollection.length; i++){
+//         let li = liCollection[i];
+//         li.addEventListener("click", e => {
+//             let liInnerText = li.innerText;
+//             let nameOfItem = allItems[liInnerText];
+//             if (li.getAttribute("clicked") === "no"){
+//                 li.setAttribute("clicked", "yes");
+//                 datasetObj.data[0] += (nameOfItem.protein * 4);
+//                 datasetObj.data[1] += (nameOfItem.carb * 4);
+//                 datasetObj.data[2] += (nameOfItem.totalFat * 9);
+//                 return myChart.update();
+//             } else {
+//                 li.setAttribute("clicked", "no");
+//                 datasetObj.data[0] -= (nameOfItem.protein * 4);
+//                 datasetObj.data[1] -= (nameOfItem.carb * 4);
+//                 datasetObj.data[2] -= (nameOfItem.totalFat * 9);
+//                 return myChart.update();
+//             }
+//         })
+//     }
+// }
 
 
 
