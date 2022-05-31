@@ -11,8 +11,20 @@ const calCount = {
             'green',
             'yellow'
         ],
+        hoverBackgroundColor: "#7E57C2"
     }]
 };
+
+// const currentTotalCalLine = {
+//     beforeDataSetsDraw(chart, args, options){
+//         const {ctx, chartArea: {top, right, bottom, left, width, height}, scales: {x, y}} = chart;
+//         ctx.save();
+//         ctx.strokeStyle = 'yellow';
+//         ctx.setLineDash([10,10]);
+//         ctx.strokeRect(left, y.getPixelForValue(500), width, 0);
+//         ctx.restore();
+//     }
+// }
 
 exports.config = {
     type: 'bar',
@@ -39,13 +51,6 @@ exports.config = {
             legend: {
                 display: false
             },
-            // title: {
-            //     display: true,
-            //     text: 'Current Calories',
-            //     font: {
-            //         size: 15
-            //     }
-            // },
             tooltip: {
                 yAlign: 'bottom',
                 displayColors: false,
@@ -81,6 +86,7 @@ exports.config = {
             }
         }
     }
+    //plugins: [currentTotalCalLine]
 };
 
 let liCollection = document.getElementsByClassName("option");
