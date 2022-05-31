@@ -90,7 +90,7 @@ exports.config = {
 };
 
 let liCollection = document.getElementsByClassName("option");
-let listItems = []
+let listItems = [];
 
 const createList = (arg) => {
     let spanItemList = document.getElementById("selected-list-text");
@@ -105,6 +105,24 @@ const createList = (arg) => {
         spanItemList.innerText = structuredList;
     }
 }
+
+// let updatedList = [];
+
+// const deleteFromList = (arg) => {
+//     let spanItemList = document.getElementById("selected-list-text");
+//     console.log(arg);
+//     console.log(listItems);
+//     debugger
+//     if (listItems.includes(arg)){
+//         let argIndex = listItems.indexOf(arg);
+//         updatedList = listItems.slice(0, argIndex).concat(listItems.slice(argIndex+1));
+//     }
+//     let structuredList = "";
+//     for (let i = 0; i < updatedList.length; i++){
+//         structuredList += updatedList[i] + "\n";
+//     }
+//     spanItemList.innerText = structuredList;
+// }
 
 exports.updateChart = (chart) => {
     let numElement = document.getElementById("total-cal-num");
@@ -128,6 +146,8 @@ exports.updateChart = (chart) => {
                 datasetObj.data[1] -= (nameOfItem.carb * 4);
                 datasetObj.data[2] -= (nameOfItem.totalFat * 9);
                 numElement.innerText -= ((nameOfItem.protein * 4) + (nameOfItem.carb * 4) + (nameOfItem.totalFat * 9));
+                debugger
+                deleteFromList(liInnerText);
                 return chart.update();
             }
         })
