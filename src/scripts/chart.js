@@ -86,6 +86,7 @@ exports.config = {
 let liCollection = document.getElementsByClassName("option");
 
 exports.updateChart = (chart) => {
+    let numElement = document.getElementById("total-cal-num");
     let datasetObj = chart.config.data.datasets[0];
     for (let i = 0; i < liCollection.length; i++){
         let li = liCollection[i];
@@ -97,12 +98,14 @@ exports.updateChart = (chart) => {
                 datasetObj.data[0] += (nameOfItem.protein * 4);
                 datasetObj.data[1] += (nameOfItem.carb * 4);
                 datasetObj.data[2] += (nameOfItem.totalFat * 9);
+                numElement.innerText = datasetObj.data[0] + datasetObj.data[1] + datasetObj.data[2];
                 return chart.update();
             } else {
                 li.setAttribute("clicked", "no");
                 datasetObj.data[0] -= (nameOfItem.protein * 4);
                 datasetObj.data[1] -= (nameOfItem.carb * 4);
                 datasetObj.data[2] -= (nameOfItem.totalFat * 9);
+                numElement.innerText -= ((nameOfItem.protein * 4) + (nameOfItem.carb * 4) + (nameOfItem.totalFat * 9));
                 return chart.update();
             }
         })
