@@ -14,26 +14,6 @@ const calCount = {
     }]
 };
 
-// let totalCal = 0;
-// let dataArray = calCount.datasets[0].data;
-// dataArray.forEach(macro => {
-//     totalCal += macro;
-// })
-
-// const newBody = (context) => {
-//     if (context.label === "Protein" || "Carb") {
-//         return `${Math.floor(context / 4)}g`;
-//     } else {
-//         return `${Math.floor(context/9)}g`;
-//     }
-// }
-
-// const footer = (context) => {
-
-//     let percent = Math.floor(context/totalCal);
-//     return `${percent}% of Total Cals`
-// }
-
 exports.config = {
     type: 'bar',
     data: calCount,
@@ -59,18 +39,20 @@ exports.config = {
             legend: {
                 display: false
             },
-            title: {
-                display: true,
-                text: 'Current Calories',
-                font: {
-                    size: 15
-                }
-            },
+            // title: {
+            //     display: true,
+            //     text: 'Current Calories',
+            //     font: {
+            //         size: 15
+            //     }
+            // },
             tooltip: {
                 yAlign: 'bottom',
                 displayColors: false,
                 backgroundColor: 'green',
                 titleFontColor: 'white',
+                titleAlign: 'center',
+                titleMarginBottom: 0,
                 bodyFontColor: 'pink',
                 borderWidth: 2,
                 borderColor: 'pink',
@@ -83,6 +65,9 @@ exports.config = {
                             return `${Math.floor(currentCal/9)}g`;
                         }
                     },
+                    afterLabel: function(item, data){
+                        return `${item.raw} kcal`
+                    },
                     footer: function(item, data){
                         let totalCal = 0;
                         let currentCal = item[0].raw;
@@ -90,8 +75,7 @@ exports.config = {
                         for (let i = 0; i < dataArray.length; i++){
                             totalCal += dataArray[i];
                         }
-                        //debugger
-                        return `${Math.round((currentCal/totalCal) * 100)}% of Total Cals`;
+                        return `${Math.round((currentCal/totalCal) * 100)}% of Total Calories`;
                     }
                 }
             }
@@ -139,5 +123,6 @@ exports.clearChart = (chart) => {
         return chart.update();
     })
 }
+
 
 // module.exports = {config, calCount, calLabels}

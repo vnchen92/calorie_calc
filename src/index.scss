@@ -42,17 +42,6 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
-.container-chart {
-  display: flex;
-  align-items: center;
-  padding: 10px;
-  width: 500px;
-  height: 250px;
-  border: 1px solid yellow;
-  border-radius: 5%;
-  //background-color: rgb(245, 232, 161);
-}
-
 .all-breads, .all-cheese, .all-meat {
   width: 45px;
   height: auto;
@@ -105,6 +94,28 @@ li > a > img {
 
 div.container-chart {
   display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  width: 500px;
+  height: 270px;
+  border: 1px solid yellow;
+  border-radius: 5%;
+  //background-color: rgb(245, 232, 161);
+}
+
+div.total-cal-container {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 250px;
+}
+
+p.total-cal-num {
+  border: 1px solid black;
+  width: 50px;
+  height: 25px;
 }
 
 ul.options {
@@ -118,9 +129,9 @@ ul.options {
   background-color: rgb(222, 232, 115);
 }
 
-li[clicked="yes"] {
-  border: 2px solid #07652c;
-}
+// li[clicked="yes"] {
+//   border: 5px solid #07652c;
+// }
 
 li.option {
   display: flex;
