@@ -6,9 +6,33 @@ const calCount = {
     labels: calLabels,
     datasets: [{
         data: [0, 0, 0],
-        backgroundColor: ['beige', 'green', 'yellow']
+        backgroundColor: [
+            'rgb(191, 196, 134)',
+            'green',
+            'yellow'
+        ],
     }]
 };
+
+// let totalCal = 0;
+// let dataArray = calCount.datasets[0].data;
+// dataArray.forEach(macro => {
+//     totalCal += macro;
+// })
+
+// const newBody = (context) => {
+//     if (context.label === "Protein" || "Carb") {
+//         return `${Math.floor(context / 4)}g`;
+//     } else {
+//         return `${Math.floor(context/9)}g`;
+//     }
+// }
+
+// const footer = (context) => {
+
+//     let percent = Math.floor(context/totalCal);
+//     return `${percent}% of Total Cals`
+// }
 
 exports.config = {
     type: 'bar',
@@ -21,11 +45,14 @@ exports.config = {
                 }
             },
             y: {
+                title: {
+                    display: true,
+                    text: 'Calories'
+                },
                 ticks: {
                     
                 },
-                max: 1500,
-                beginAtZero: true
+                max: 1500
             },
         },
         plugins: {
@@ -40,11 +67,33 @@ exports.config = {
                 }
             },
             tooltip: {
-                yAlign: 'bottom'
-                //displayColors: false,
-                // callbacks: {
-
-                // }
+                yAlign: 'bottom',
+                displayColors: false,
+                backgroundColor: 'green',
+                titleFontColor: 'white',
+                bodyFontColor: 'pink',
+                borderWidth: 2,
+                borderColor: 'pink',
+                callbacks: {
+                    label: function(item, data){
+                        let currentCal = item.raw;
+                        if (item.label === 'Protein' || item.label === 'Carb'){
+                            return `${Math.floor(currentCal/4)}g`;
+                        } else {
+                            return `${Math.floor(currentCal/9)}g`;
+                        }
+                    },
+                    footer: function(item, data){
+                        let totalCal = 0;
+                        let currentCal = item[0].raw;
+                        let dataArray = item[0].dataset.data;
+                        for (let i = 0; i < dataArray.length; i++){
+                            totalCal += dataArray[i];
+                        }
+                        //debugger
+                        return `${Math.round((currentCal/totalCal) * 100)}% of Total Cals`;
+                    }
+                }
             }
         }
     }

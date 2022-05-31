@@ -5,8 +5,8 @@ const {config, updateChart, clearChart} = require("./scripts/chart.js");
 
 document.addEventListener("DOMContentLoaded", () => {
     const ctx = document.getElementById("canvas-chart").getContext("2d");
-    ctx.canvas.width  = 500;
-    ctx.canvas.height = 300;
+    // ctx.canvas.width  = 500;
+    // ctx.canvas.height = 300;
     const myChart = new Chart(ctx, config);
 
     updateChart(myChart);
