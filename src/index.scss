@@ -43,7 +43,7 @@ body {
 }
 
 .all-breads, .all-cheese, .all-meat, .single-sandwich {
-  width: 45px;
+  width: 35px;
   height: auto;
 }
 
@@ -88,6 +88,8 @@ li > a > img {
 .canvas-and-options {
   display: flex;
   flex-wrap: wrap;
+  position: relative;
+  top: 30px;
   justify-content: space-around;
   align-items: center;
   border-bottom: 2px solid rgba(204, 147, 73);
@@ -95,11 +97,7 @@ li > a > img {
   background-color: rgba(250, 249, 247, .7);
 }
 
-// div.container-chart-border {
-//   background-color: white;
-// }
-
-div.container-chart {
+.container-chart {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -107,27 +105,27 @@ div.container-chart {
   padding: 10px;
   width: 500px;
   height: 270px;
-  background-color: rgba(158, 161, 122, 0.5);
-  border: 3px solid rgba(204, 147, 73);
+  background-color: rgba(250, 249, 247, .5);
+  //background-color: rgba(158, 161, 122, 0.5);
+  border: 2px solid rgba(204, 147, 73);
   border-radius: 5%;
-  //background-color: rgb(245, 232, 161);
 }
 
-div.total-cal-container {
+.total-cal-container {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
   width: 250px;
 }
 
-p#total-cal-num {
+#total-cal-num {
   border: 2px solid rgba(204, 147, 73);
   border-radius: 5%;
   width: 50px;
   height: 25px;
 }
 
-ul.options {
+.options {
   display: grid;
   grid-template-columns: 100px 100px 100px 100px 100px 100px;
   column-gap: 5px;
@@ -142,20 +140,20 @@ ul.options {
 //   border: 5px solid #07652c;
 // }
 
-li.option {
+.option {
   display: flex;
   border: 1px solid yellow;
-  border-radius: 30%;
+  border-radius: 5%;
   align-items: center;
   text-align: center;
   font-size: 10px;
   background-color: aquamarine;
 }
 
-li.clear-button {
+.clear-button, #selected-list {
   display: flex;
-  border: 1px solid black;
-  border-radius: 30%;
+  border: 1px solid yellow;
+  border-radius: 5%;
   justify-content: center;
   align-items: center;
 }
