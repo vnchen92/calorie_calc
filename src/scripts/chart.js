@@ -7,11 +7,11 @@ const calCount = {
     datasets: [{
         data: [0, 0, 0],
         backgroundColor: [
-            'rgb(191, 196, 134)',
-            'green',
-            'yellow'
+            'rgb(191, 196, 134, .7)',
+            'rgb(111, 214, 90, .7)',
+            'rgb(217, 217, 95, .7)'
         ],
-        hoverBackgroundColor: "#7E57C2"
+        hoverBackgroundColor: 'rgb(140, 127, 109)'
     }]
 };
 
@@ -54,13 +54,13 @@ exports.config = {
             tooltip: {
                 yAlign: 'bottom',
                 displayColors: false,
-                backgroundColor: 'green',
+                backgroundColor: 'rgba(158, 161, 122, 0.5)',
                 titleFontColor: 'white',
                 titleAlign: 'center',
                 titleMarginBottom: 0,
-                bodyFontColor: 'pink',
-                borderWidth: 2,
-                borderColor: 'pink',
+                bodyFontColor: 'white',
+                borderWidth: 1,
+                borderColor: 'white',
                 callbacks: {
                     label: function(item, data){
                         let currentCal = item.raw;

@@ -90,7 +90,14 @@ li > a > img {
   flex-wrap: wrap;
   justify-content: space-around;
   align-items: center;
+  border-bottom: 2px solid rgba(204, 147, 73);
+  border-top: 2px solid rgba(204, 147, 73);
+  background-color: rgba(250, 249, 247, .7);
 }
+
+// div.container-chart-border {
+//   background-color: white;
+// }
 
 div.container-chart {
   display: flex;
@@ -100,7 +107,8 @@ div.container-chart {
   padding: 10px;
   width: 500px;
   height: 270px;
-  border: 1px solid yellow;
+  background-color: rgba(158, 161, 122, 0.5);
+  border: 3px solid rgba(204, 147, 73);
   border-radius: 5%;
   //background-color: rgb(245, 232, 161);
 }
@@ -113,7 +121,8 @@ div.total-cal-container {
 }
 
 p#total-cal-num {
-  border: 1px solid black;
+  border: 2px solid rgba(204, 147, 73);
+  border-radius: 5%;
   width: 50px;
   height: 25px;
 }
