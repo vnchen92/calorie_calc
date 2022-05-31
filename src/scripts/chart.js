@@ -93,17 +93,17 @@ let liCollection = document.getElementsByClassName("option");
 let listItems = []
 
 const createList = (arg) => {
-    let ulItemList = document.getElementById("selected-list");
+    let spanItemList = document.getElementById("selected-list-text");
     listItems.push(arg);
-    let liTag = document.createElement("li");
-    for (let i = 0; i < listItems.length; i++) {
-        if (ulItemList.innerText === undefined) {
-            ulItemList.innerText = listItems[i] + "/n";
-        } else {
-            ulItemList.innerText = ulItemList.innerText + "/n" + listItems[i] + "/n";
+    if (listItems.length === 0) {
+        spanItemList.innerText = listItems[i];
+    } else {
+        let structuredList = "";
+        for (let i = 0; i < listItems.length; i++){
+            structuredList += listItems[i] + "\n";
         }
+        spanItemList.innerText = structuredList;
     }
-    console.log(ulItemList.innerText);
 }
 
 exports.updateChart = (chart) => {
