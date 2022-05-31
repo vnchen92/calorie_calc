@@ -32,7 +32,7 @@ exports.config = {
                 ticks: {
                     
                 },
-                max: 1500
+                max: 1000
             },
         },
         plugins: {
@@ -114,6 +114,7 @@ exports.updateChart = (chart) => {
 
 exports.clearChart = (chart) => {
     let liClear = document.querySelector(".clear-button");
+    let numElement = document.getElementById("total-cal-num");
     let datasetObj = chart.config.data.datasets[0];
     liClear.addEventListener("click", e => {
         for (let i = 0; i < liCollection.length; i++){
@@ -123,6 +124,7 @@ exports.clearChart = (chart) => {
         datasetObj.data[0] = 0;
         datasetObj.data[1] = 0;
         datasetObj.data[2] = 0;
+        numElement.innerText = 0;
         return chart.update();
     })
 }
