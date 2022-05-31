@@ -39,7 +39,7 @@ exports.config = {
             y: {
                 title: {
                     display: true,
-                    text: 'Calories'
+                    text: 'Calories per Macro'
                 },
                 ticks: {
                     
@@ -90,6 +90,21 @@ exports.config = {
 };
 
 let liCollection = document.getElementsByClassName("option");
+let listItems = []
+
+const createList = (arg) => {
+    let ulItemList = document.getElementById("selected-list");
+    listItems.push(arg);
+    let liTag = document.createElement("li");
+    for (let i = 0; i < listItems.length; i++) {
+        if (ulItemList.innerText === undefined) {
+            ulItemList.innerText = listItems[i] + "/n";
+        } else {
+            ulItemList.innerText = ulItemList.innerText + "/n" + listItems[i] + "/n";
+        }
+    }
+    console.log(ulItemList.innerText);
+}
 
 exports.updateChart = (chart) => {
     let numElement = document.getElementById("total-cal-num");
@@ -105,6 +120,7 @@ exports.updateChart = (chart) => {
                 datasetObj.data[1] += (nameOfItem.carb * 4);
                 datasetObj.data[2] += (nameOfItem.totalFat * 9);
                 numElement.innerText = datasetObj.data[0] + datasetObj.data[1] + datasetObj.data[2];
+                createList(liInnerText);
                 return chart.update();
             } else {
                 li.setAttribute("clicked", "no");

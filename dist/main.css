@@ -132,9 +132,9 @@ li.clear-button {
   align-items: center;
 }
 
-#selected-list .selected-list-text {
+#selected-list #selected-list-text {
   visibility: hidden;
-  width: 200px;
+  width: 300px;
   background-color: #f9f35a;
   color: #16c35b;
   border-radius: 5px;
@@ -142,6 +142,6 @@ li.clear-button {
   z-index: 1;
 }
 
-#selected-list:hover .selected-list-text {
+#selected-list:hover #selected-list-text {
   visibility: visible;
 }
