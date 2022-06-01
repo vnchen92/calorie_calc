@@ -117,16 +117,33 @@ const createList = () => {
             structuredList += listItems[i] + "\n";
         }
         ulItemList.innerText = structuredList;
+    } else {
+        listItems = [];
     }
 }
 
 //here
-// const doubleIt = () => {
-//     let pTwelveInch = document.getElementById("twelve");
-//     pTwelveInch.addEventListener("click", {
-        
-//     })
-// }
+exports.doubleIt = (chart) => {
+    createList();
+    this.clearChart(chart);
+    let pTwelveInch = document.getElementById("twelve");
+    let datasetObj = chart.config.data.datasets[0];
+    let numElement = document.getElementById("total-cal-num");
+    pTwelveInch.addEventListener("click", e => {
+        for (let i = 0; i < listItems.length; i++){
+            let itemName = listItems[i];
+            console.log(itemName);
+            datasetObj.data[0] += (allItems[itemName].protein * 4) * 2;
+            datasetObj.data[1] += (allItems[itemName].carb * 4) * 2;
+            datasetObj.data[2] += (allItems[itemName].totalFat * 9) * 2;
+            console.log("protein " + datasetObj.data[0]);
+            console.log("carb " + datasetObj.data[1]);
+            console.log("totalFat " + datasetObj.data[2]);
+            numElement.innerText = (datasetObj.data[0] + datasetObj.data[1] + datasetObj.data[2]);
+            console.log(numElement);
+        }
+    })
+}
 
 
 const deleteFromList = (arg) => {
@@ -190,6 +207,8 @@ exports.showList = () => {
     })
 }
 
+
+//clears everything but the last item on the list
 exports.clearChart = (chart) => {
     let liClear = document.querySelector(".clear-button");
     let numElement = document.getElementById("total-cal-num");
@@ -203,7 +222,9 @@ exports.clearChart = (chart) => {
         datasetObj.data[1] = 0;
         datasetObj.data[2] = 0;
         numElement.innerText = 0;
-        listItems = [];
+        for (let i = 0; i < listItems.length; i++){
+            deleteFromList(listItems[i]);
+        }
         return chart.update();
     })
 }

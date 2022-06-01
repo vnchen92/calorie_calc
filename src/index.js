@@ -1,4 +1,4 @@
-const {config, updateChart, clearChart, showList} = require("./scripts/chart.js");
+const {config, updateChart, clearChart, showList, doubleIt} = require("./scripts/chart.js");
 // const {allItems} = require("./scripts/data.js");
 //const {getData} = require("./scripts/options.js");
 //const updateChart = chart => {};
@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
     updateChart(myChart);
     clearChart(myChart);
     showList();
-
+    doubleIt(myChart);
 });
 
 
