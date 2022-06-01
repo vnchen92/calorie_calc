@@ -17,7 +17,7 @@ h1, h2, p, strong, em, a {
   font: inherit;
   text-decoration: inherit;
   text-align: inherit;
-  color: inherit;
+  color: rgba(0, 0, 0, 0.6);
   background: transparent;
 }
 
@@ -50,7 +50,7 @@ body {
 
 .big-holder {
   position: absolute;
-  top: 50px;
+  top: 40px;
   z-index: -1;
 }
 
@@ -156,9 +156,6 @@ li > a > img {
 
 .option:hover {
   background-color: rgb(39, 162, 84, .5);
-  width: 100px;
-  height: 40px;
-  box-sizing: border-box;
 }
 
 li[clicked="yes"] {
@@ -180,6 +177,23 @@ li[clicked="yes"] {
   cursor: pointer;
 }
 
+.twelve-container {
+  display: inline-block;
+  text-align: center;
+}
+
+#twelve {
+  border: 1px solid rgb(164, 104, 25);
+  background-color: rgb(215, 149, 63);
+  border-radius: 2%;
+  width: 620px;
+  padding: 3px;
+  margin-left: auto;
+  margin-top: 5px;
+  margin-bottom: -5px;
+  cursor: pointer;
+}
+
 .clear-button, #selected-list {
   display: flex;
   border: 1px solid rgb(164, 104, 25);
@@ -192,6 +206,10 @@ li[clicked="yes"] {
   align-items: center;
   cursor: pointer;
   transition: 0.2s all;
+}
+
+#twelve:hover, .clear-button:hover, #selected-list:hover {
+  background-color: rgb(183, 128, 56);
 }
 
 .clear-button:active, #selected-list:active {

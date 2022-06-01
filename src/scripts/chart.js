@@ -109,7 +109,6 @@ exports.config = {
 let liCollection = document.getElementsByClassName("option");
 let listItems = [];
 
-//FULLY FUNCTIONAL
 const createList = (arg) => {
     let ulItemList = document.getElementById("selected-list-text");
     listItems.push(arg);
