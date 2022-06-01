@@ -105,7 +105,6 @@ exports.config = {
 
 let liCollection = document.getElementsByClassName("option");
 let listItems = [];
-let updatedList = [];
 
 //FULLY FUNCTIONAL
 const createList = (arg) => {
@@ -124,10 +123,11 @@ const createList = (arg) => {
 
 // DOES NOT WORK/ERRORS OUT
 // const deleteFromList = (arg) => {
-//     let spanItemList = document.getElementById("selected-list-text");
-//     console.log(arg);
-//     console.log(listItems);
-//     debugger
+//     let updatedList = [];
+//     let ulItemList = document.getElementById("selected-list-text");
+//     //console.log(arg);
+//     //console.log(listItems);
+//     //debugger
 //     if (listItems.includes(arg)){
 //         let argIndex = listItems.indexOf(arg);
 //         updatedList = listItems.slice(0, argIndex).concat(listItems.slice(argIndex+1));
@@ -136,7 +136,7 @@ const createList = (arg) => {
 //     for (let i = 0; i < updatedList.length; i++){
 //         structuredList += updatedList[i] + "\n";
 //     }
-//     spanItemList.innerText = structuredList;
+//     ulItemList.innerText = structuredList;
 // }
 
 exports.updateChart = (chart) => {
@@ -162,27 +162,12 @@ exports.updateChart = (chart) => {
                 datasetObj.data[2] -= (nameOfItem.totalFat * 9);
                 numElement.innerText -= ((nameOfItem.protein * 4) + (nameOfItem.carb * 4) + (nameOfItem.totalFat * 9));
                 //debugger
-                //deleteFromList(liInnerText);
+                deleteFromList(liInnerText);
                 return chart.update();
             }
         })
     }
 }
-
-//DOESNT WORK BUT ALSO DOES NOT ERROR OUT
-// exports.showList = () => {
-//     let liSelectedList = document.getElementById("selected-list");
-//     liSelectedList.addEventListener("click", e => {
-//         let ulItemList = document.getElementById("selected-list-text");
-//         if (ulItemList.getAttribute("clicked" === "no")){
-//             ulItemList.style.visibility = "visible";
-//             ulItemList.setAttribute("clicked", "yes");
-//         } else {
-//             ulItemList.style.visibility = "hidden";
-//             ulItemList.setAttribute("clicked", "no");
-//         }
-//     })
-// }
 
 exports.showList = () => {
     let liSelectedList = document.getElementById("selected-list");
