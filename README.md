@@ -49,4 +49,13 @@ There are so many ways in which this calculator can be more helpful and customiz
 - Chart comparason between current meal and US recommended guidelines
 
 
+## Credits
+
+- LinkedIn and GitHub icons provided by https://icons8.com/
+- Name and Title Font provided by https://fontmeme.com/
+- Giant baquette background image provided by https://www.vecteezy.com/vector-art/
+- All menu images provided by https://www.flaticon.com/
+- Mini Subway sandwich image provided by https://www.kissclipart.com/
+
+
 
