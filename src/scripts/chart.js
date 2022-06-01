@@ -37,6 +37,9 @@ exports.config = {
     type: 'bar',
     data: calCount,
     options: {
+        animations: {
+            duration: 1000
+        },
         scales: {
             x: {
                 grid: {
@@ -121,7 +124,7 @@ const createList = (arg) => {
     }
 }
 
-// DOES NOT WORK/ERRORS OUT
+
 const deleteFromList = (arg) => {
     let updatedList = [];
     let ulItemList = document.getElementById("selected-list-text");
