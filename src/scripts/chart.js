@@ -122,22 +122,25 @@ const createList = (arg) => {
 }
 
 // DOES NOT WORK/ERRORS OUT
-// const deleteFromList = (arg) => {
-//     let updatedList = [];
-//     let ulItemList = document.getElementById("selected-list-text");
-//     //console.log(arg);
-//     //console.log(listItems);
-//     //debugger
-//     if (listItems.includes(arg)){
-//         let argIndex = listItems.indexOf(arg);
-//         updatedList = listItems.slice(0, argIndex).concat(listItems.slice(argIndex+1));
-//     }
-//     let structuredList = "";
-//     for (let i = 0; i < updatedList.length; i++){
-//         structuredList += updatedList[i] + "\n";
-//     }
-//     ulItemList.innerText = structuredList;
-// }
+const deleteFromList = (arg) => {
+    let updatedList = [];
+    let ulItemList = document.getElementById("selected-list-text");
+    if (listItems.indexOf(arg) > -1){ //listItems.includes(arg)
+        let argIndex = listItems.indexOf(arg);
+        //updatedList = listItems.slice(0, argIndex).concat(listItems.slice(argIndex+1));
+        for (let i = 0; i < listItems.length; i++){
+            if (i !== argIndex){
+                updatedList.push(listItems[i]);
+            }
+        }
+    }
+    let structuredList = "";
+    for (let i = 0; i < updatedList.length; i++){
+        structuredList += updatedList[i] + "\n";
+    }
+    ulItemList.innerText = structuredList;
+    listItems = updatedList;
+}
 
 exports.updateChart = (chart) => {
     let numElement = document.getElementById("total-cal-num");
