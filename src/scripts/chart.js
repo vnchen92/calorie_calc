@@ -170,16 +170,27 @@ exports.updateChart = (chart) => {
 }
 
 //DOESNT WORK BUT ALSO DOES NOT ERROR OUT
+// exports.showList = () => {
+//     let liSelectedList = document.getElementById("selected-list");
+//     liSelectedList.addEventListener("click", e => {
+//         let ulItemList = document.getElementById("selected-list-text");
+//         if (ulItemList.getAttribute("clicked" === "no")){
+//             ulItemList.style.visibility = "visible";
+//             ulItemList.setAttribute("clicked", "yes");
+//         } else {
+//             ulItemList.style.visibility = "hidden";
+//             ulItemList.setAttribute("clicked", "no");
+//         }
+//     })
+// }
+
 exports.showList = () => {
     let liSelectedList = document.getElementById("selected-list");
     liSelectedList.addEventListener("click", e => {
-        let ulItemList = document.getElementById("selected-list-text");
-        if (ulItemList.getAttribute("clicked" === "no")){
-            ulItemList.style.visibility = "visible";
-            ulItemList.setAttribute("clicked", "yes");
+        if (liSelectedList.classList.contains('active')) {
+            liSelectedList.classList.remove('active');
         } else {
-            ulItemList.style.visibility = "hidden";
-            ulItemList.setAttribute("clicked", "no");
+            liSelectedList.classList.add('active');
         }
     })
 }

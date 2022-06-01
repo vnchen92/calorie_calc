@@ -182,6 +182,6 @@ li[clicked=yes] {
   z-index: 1;
 }
 
-#selected-list:hover #selected-list-text {
+#selected-list.active #selected-list-text {
   visibility: visible;
 }
