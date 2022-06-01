@@ -25,6 +25,7 @@ body {
   background-size: contain;
   background-repeat: no-repeat;
   background-position: bottom;
+  background-size: cover;
   font-family: Arial, Helvetica, sans-serif;
 }
 
@@ -80,6 +81,7 @@ li > a > img {
   align-items: center;
   border-bottom: 2px solid rgb(204, 147, 73);
   border-top: 2px solid rgb(204, 147, 73);
+  padding: 10px;
   background-color: rgba(250, 249, 247, 0.7);
 }
 
@@ -103,9 +105,17 @@ li > a > img {
   width: 250px;
 }
 
+.total-cal-text {
+  color: rgba(0, 0, 0, 0.6);
+}
+
 #total-cal-num {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   border: 2px solid rgb(204, 147, 73);
-  border-radius: 5%;
+  border-radius: 7%;
+  color: rgba(0, 0, 0, 0.6);
   width: 50px;
   height: 25px;
 }
@@ -118,25 +128,48 @@ li > a > img {
 }
 
 .option:hover {
-  background-color: rgb(222, 232, 115);
+  background-color: rgba(39, 162, 84, 0.5);
+  width: 100px;
+  height: 40px;
+  box-sizing: border-box;
+}
+
+li[clicked=yes] {
+  border: 2px solid rgb(30, 135, 69);
 }
 
 .option {
   display: flex;
-  border: 1px solid yellow;
-  border-radius: 5%;
+  border: 1px solid rgb(39, 162, 84);
+  width: 100px;
+  height: 40px;
+  box-sizing: border-box;
+  border-radius: 7%;
+  justify-content: space-around;
   align-items: center;
   text-align: center;
   font-size: 10px;
-  background-color: aquamarine;
+  background-color: #39f082;
+  cursor: pointer;
 }
 
 .clear-button, #selected-list {
   display: flex;
-  border: 1px solid yellow;
-  border-radius: 5%;
+  border: 1px solid rgb(164, 104, 25);
+  background-color: rgb(215, 149, 63);
+  width: 100px;
+  height: 40px;
+  box-sizing: border-box;
+  border-radius: 7%;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
+  transition: 0.2s all;
+}
+
+.clear-button:active, #selected-list:active {
+  transform: scale(0.92);
+  box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
 }
 
 #selected-list #selected-list-text {

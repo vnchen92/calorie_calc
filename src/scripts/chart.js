@@ -11,7 +11,14 @@ const calCount = {
             'rgb(111, 214, 90, .7)',
             'rgb(217, 217, 95, .7)'
         ],
-        hoverBackgroundColor: 'rgb(140, 127, 109)'
+        borderColor: [
+            'rgb(191, 196, 134)',
+            'rgb(111, 214, 90)',
+            'rgb(217, 217, 95)'
+        ],
+        borderWidth: 2,
+        hoverBackgroundColor: 'rgb(204, 147, 73, .7)',
+        hoverBorderColor: 'rgb(204, 147, 73lsls)'
     }]
 };
 
@@ -32,14 +39,21 @@ exports.config = {
     options: {
         scales: {
             x: {
+                grid: {
+                    borderColor: 'rgb(204, 147, 73)'
+                },
                 ticks: {
                     
                 }
             },
             y: {
+                grid: {
+                    borderColor: 'rgb(204, 147, 73)'
+                },
                 title: {
                     display: true,
                     text: 'Calories per Macro'
+                    //color:
                 },
                 ticks: {
                     
