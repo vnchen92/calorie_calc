@@ -1,10 +1,13 @@
 let liCollection = document.getElementsByClassName("option");
 let listItems = [];
 
+//document.getElementById("lefteye").style.backgroundColor = "purple";
+
 const createList = (arg) => {
-    let liSelectedList = document.getElementById(selected-list);
+    let liSelectedList = document.getElementById("selected-list");
     let ulItemList = document.getElementById("selected-list-text");
     liSelectedList.addEventListener("click", e => {
+        ulItemList.style.visibility = "visible";
         if (ulItemList.getAttribute("clicked") === "no"){
             ulItemList.setAttribute("clicked", "yes");
             listItems.push(arg);
@@ -18,7 +21,8 @@ const createList = (arg) => {
                 ulItemList.innerText = structuredList;
             }
         } else {
-            ulItemList.setAttribute("clicked", "yes");
+            ulItemList.setAttribute("clicked", "no");
+            ulItemList.style.visibility = "hidden";
                 if (listItems.includes(arg)){
                     let argIndex = listItems.indexOf(arg);
                     updatedList = listItems.slice(0, argIndex).concat(listItems.slice(argIndex+1));

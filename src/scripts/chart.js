@@ -18,7 +18,7 @@ const calCount = {
         ],
         borderWidth: 2,
         hoverBackgroundColor: 'rgb(204, 147, 73, .7)',
-        hoverBorderColor: 'rgb(204, 147, 73lsls)'
+        hoverBorderColor: 'rgb(204, 147, 73)'
     }]
 };
 
@@ -105,23 +105,24 @@ exports.config = {
 
 let liCollection = document.getElementsByClassName("option");
 let listItems = [];
+let updatedList = [];
 
+//FULLY FUNCTIONAL
 const createList = (arg) => {
-    let spanItemList = document.getElementById("selected-list-text");
+    let ulItemList = document.getElementById("selected-list-text");
     listItems.push(arg);
     if (listItems.length === 0) {
-        spanItemList.innerText = listItems[i];
+        ulItemList.innerText = listItems[i];
     } else {
         let structuredList = "";
         for (let i = 0; i < listItems.length; i++){
             structuredList += listItems[i] + "\n";
         }
-        spanItemList.innerText = structuredList;
+        ulItemList.innerText = structuredList;
     }
 }
 
-// let updatedList = [];
-
+// DOES NOT WORK/ERRORS OUT
 // const deleteFromList = (arg) => {
 //     let spanItemList = document.getElementById("selected-list-text");
 //     console.log(arg);
@@ -160,12 +161,27 @@ exports.updateChart = (chart) => {
                 datasetObj.data[1] -= (nameOfItem.carb * 4);
                 datasetObj.data[2] -= (nameOfItem.totalFat * 9);
                 numElement.innerText -= ((nameOfItem.protein * 4) + (nameOfItem.carb * 4) + (nameOfItem.totalFat * 9));
-                debugger
-                deleteFromList(liInnerText);
+                //debugger
+                //deleteFromList(liInnerText);
                 return chart.update();
             }
         })
     }
+}
+
+//DOESNT WORK BUT ALSO DOES NOT ERROR OUT
+exports.showList = () => {
+    let liSelectedList = document.getElementById("selected-list");
+    liSelectedList.addEventListener("click", e => {
+        let ulItemList = document.getElementById("selected-list-text");
+        if (ulItemList.getAttribute("clicked" === "no")){
+            ulItemList.style.visibility = "visible";
+            ulItemList.setAttribute("clicked", "yes");
+        } else {
+            ulItemList.style.visibility = "hidden";
+            ulItemList.setAttribute("clicked", "no");
+        }
+    })
 }
 
 exports.clearChart = (chart) => {
@@ -184,6 +200,3 @@ exports.clearChart = (chart) => {
         return chart.update();
     })
 }
-
-
-// module.exports = {config, calCount, calLabels}
