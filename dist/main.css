@@ -56,15 +56,11 @@ header {
 
 .mine {
   display: flex;
-  width: 40%;
+  position: relative;
+  top: 20px;
+  width: 25%;
   justify-content: space-evenly;
   align-items: baseline;
-}
-
-.icon-container {
-  display: flex;
-  width: 16%;
-  justify-content: space-between;
 }
 
 li > a > img {
@@ -76,7 +72,7 @@ li > a > img {
   display: flex;
   flex-wrap: wrap;
   position: relative;
-  top: 30px;
+  top: 20px;
   justify-content: space-around;
   align-items: center;
   border-bottom: 2px solid rgb(204, 147, 73);
@@ -174,10 +170,11 @@ li[clicked=yes] {
 
 #selected-list #selected-list-text {
   visibility: hidden;
-  width: 300px;
-  background-color: #f9f35a;
-  color: #16c35b;
+  width: 250px;
+  background-color: rgba(250, 249, 247, 0.9);
+  color: rgba(0, 0, 0, 0.6);
   border-radius: 5px;
+  border: 2px solid rgb(204, 147, 73);
   position: absolute;
   z-index: 1;
 }
