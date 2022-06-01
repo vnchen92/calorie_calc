@@ -107,14 +107,11 @@ exports.config = {
 };
 
 let liCollection = document.getElementsByClassName("option");
-let listItems = [];
+let listItems = []; //this is used everywhere
 
-const createList = (arg) => {
+const createList = () => {
     let ulItemList = document.getElementById("selected-list-text");
-    listItems.push(arg);
-    if (listItems.length === 0) {
-        ulItemList.innerText = listItems[i];
-    } else {
+    if (listItems.length > 0) {
         let structuredList = "";
         for (let i = 0; i < listItems.length; i++){
             structuredList += listItems[i] + "\n";
@@ -122,6 +119,14 @@ const createList = (arg) => {
         ulItemList.innerText = structuredList;
     }
 }
+
+//here
+// const doubleIt = () => {
+//     let pTwelveInch = document.getElementById("twelve");
+//     pTwelveInch.addEventListener("click", {
+        
+//     })
+// }
 
 
 const deleteFromList = (arg) => {
@@ -154,11 +159,12 @@ exports.updateChart = (chart) => {
             let nameOfItem = allItems[liInnerText];
             if (li.getAttribute("clicked") === "no"){
                 li.setAttribute("clicked", "yes");
+                listItems.push(liInnerText);
                 datasetObj.data[0] += (nameOfItem.protein * 4);
                 datasetObj.data[1] += (nameOfItem.carb * 4);
                 datasetObj.data[2] += (nameOfItem.totalFat * 9);
                 numElement.innerText = datasetObj.data[0] + datasetObj.data[1] + datasetObj.data[2];
-                createList(liInnerText);
+                createList();
                 return chart.update();
             } else {
                 li.setAttribute("clicked", "no");
@@ -166,7 +172,6 @@ exports.updateChart = (chart) => {
                 datasetObj.data[1] -= (nameOfItem.carb * 4);
                 datasetObj.data[2] -= (nameOfItem.totalFat * 9);
                 numElement.innerText -= ((nameOfItem.protein * 4) + (nameOfItem.carb * 4) + (nameOfItem.totalFat * 9));
-                //debugger
                 deleteFromList(liInnerText);
                 return chart.update();
             }
@@ -198,6 +203,7 @@ exports.clearChart = (chart) => {
         datasetObj.data[1] = 0;
         datasetObj.data[2] = 0;
         numElement.innerText = 0;
+        listItems = [];
         return chart.update();
     })
 }

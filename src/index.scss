@@ -212,7 +212,7 @@ li[clicked="yes"] {
   background-color: rgb(183, 128, 56);
 }
 
-.clear-button:active, #selected-list:active {
+.clear-button:active, #selected-list:active #twelve:active {
   transform: scale(0.92);
   box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
 }
