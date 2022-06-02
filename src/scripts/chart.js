@@ -123,25 +123,50 @@ const createList = () => {
 }
 
 //here
-exports.doubleIt = (chart) => {
-    this.clearChart(chart);
+// exports.doubleIt = (chart) => {
+//     let pTwelveInch = document.getElementById("twelve");
+//     let datasetObj = chart.config.data.datasets[0];
+//     let numElement = document.getElementById("total-cal-num");
+//     pTwelveInch.addEventListener("click", e => {
+//         if (pTwelveInch.getAttribute("clicked" === "no")){
+//             pTwelveInch.setAttribute("clicked", "yes");
+//             this.clearChart(chart);
+//             for (let i = 0; i < listItems.length; i++){
+//                 let itemName = listItems[i];
+//                 if (listItems.length > 0) {
+//                     datasetObj.data[0] += (allItems[itemName].protein * 4);
+//                     datasetObj.data[1] += (allItems[itemName].carb * 4);
+//                     datasetObj.data[2] += (allItems[itemName].totalFat * 9);
+//                     numElement.innerText = (datasetObj.data[0] + datasetObj.data[1] + datasetObj.data[2]);
+//                 } else {
+
+//                 }
+//             }
+//         }
+//     })
+// }
+
+const doubleIt = (chart) => {
     let pTwelveInch = document.getElementById("twelve");
     let datasetObj = chart.config.data.datasets[0];
     let numElement = document.getElementById("total-cal-num");
     pTwelveInch.addEventListener("click", e => {
-        if (pTwelveInch.getAttribute("clicked" === "no")){
-        for (let i = 0; i < listItems.length; i++){
-            let itemName = listItems[i];
-            if (listItems.length > 0) {
-                datasetObj.data[0] += (allItems[itemName].protein * 4);
-                datasetObj.data[1] += (allItems[itemName].carb * 4);
-                datasetObj.data[2] += (allItems[itemName].totalFat * 9);
-                numElement.innerText = (datasetObj.data[0] + datasetObj.data[1] + datasetObj.data[2]);
-            } else {
+        if (pTwelveInch.classList.contains('active')) {
+            pTwelveInch.classList.remove('active');
+        } else {
+            pTwelveInch.classList.add('active');
+            for (let i = 0; i < listItems.length; i++){
+                let itemName = listItems[i];
+                if (listItems.length > 0) {
+                    datasetObj.data[0] += (allItems[itemName].protein * 4);
+                    datasetObj.data[1] += (allItems[itemName].carb * 4);
+                    datasetObj.data[2] += (allItems[itemName].totalFat * 9);
+                    numElement.innerText = (datasetObj.data[0] + datasetObj.data[1] + datasetObj.data[2]);
+            //     } else {
 
+                }
             }
         }
-    }
     })
 }
 
@@ -208,7 +233,6 @@ exports.showList = () => {
 }
 
 
-//clears everything but the last item on the list
 exports.clearChart = (chart) => {
     let liClear = document.querySelector(".clear-button");
     let numElement = document.getElementById("total-cal-num");
