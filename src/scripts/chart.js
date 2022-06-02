@@ -61,7 +61,7 @@ exports.config = {
                 ticks: {
                     
                 },
-                max: 1000
+                max: 800
             },
         },
         plugins: {
@@ -124,24 +124,24 @@ const createList = () => {
 
 //here
 exports.doubleIt = (chart) => {
-    createList();
     this.clearChart(chart);
     let pTwelveInch = document.getElementById("twelve");
     let datasetObj = chart.config.data.datasets[0];
     let numElement = document.getElementById("total-cal-num");
     pTwelveInch.addEventListener("click", e => {
+        if (pTwelveInch.getAttribute("clicked" === "no")){
         for (let i = 0; i < listItems.length; i++){
             let itemName = listItems[i];
-            console.log(itemName);
-            datasetObj.data[0] += (allItems[itemName].protein * 4) * 2;
-            datasetObj.data[1] += (allItems[itemName].carb * 4) * 2;
-            datasetObj.data[2] += (allItems[itemName].totalFat * 9) * 2;
-            console.log("protein " + datasetObj.data[0]);
-            console.log("carb " + datasetObj.data[1]);
-            console.log("totalFat " + datasetObj.data[2]);
-            numElement.innerText = (datasetObj.data[0] + datasetObj.data[1] + datasetObj.data[2]);
-            console.log(numElement);
+            if (listItems.length > 0) {
+                datasetObj.data[0] += (allItems[itemName].protein * 4);
+                datasetObj.data[1] += (allItems[itemName].carb * 4);
+                datasetObj.data[2] += (allItems[itemName].totalFat * 9);
+                numElement.innerText = (datasetObj.data[0] + datasetObj.data[1] + datasetObj.data[2]);
+            } else {
+
+            }
         }
+    }
     })
 }
 
