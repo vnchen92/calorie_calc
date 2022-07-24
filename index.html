@@ -21,6 +21,15 @@
     </header>
     <div class="container-option-canvas">
         <section class="canvas-and-options">
+            <div class="container-chart-border">
+                <div class="container-chart">
+                    <div class="total-cal-container">
+                        <p class="total-cal-text">Current Total Calories:</p>
+                        <p id="total-cal-num"></p>
+                    </div>
+                    <canvas id="canvas-chart"></canvas>
+                </div>
+            </div>
             <div class="twelve-container">
                 <p id="twelve" clicked="no">Make it a footlong</p>
                 <ul class="options">
@@ -70,15 +79,6 @@
                     </li>
                     <li class="clear-button"><img class="clear" src="./assets/images/clear.png"></li>
                 </ul>
-            </div>
-            <div class="container-chart-border">
-                <div class="container-chart">
-                    <div class="total-cal-container">
-                        <p class="total-cal-text">Current Total Calories:</p>
-                        <p id="total-cal-num"></p>
-                    </div>
-                    <canvas id="canvas-chart"></canvas>
-                </div>
             </div>
         </section>
     </div>
