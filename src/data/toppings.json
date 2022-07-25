@@ -16,23 +16,6 @@
       "calcium": 0,
       "iron": 0
    },
-   "Smashed Avocado": {
-      "servingSize": 35,
-      "calories": 70,
-      "totalFat": 6,
-      "satFat": 1,
-      "transFat": 0,
-      "chol": 0,
-      "sodium": 130,
-      "carb": 3,
-      "dietaryFiber": 2,
-      "sugar": 0,
-      "protein": 1,
-      "vitA": 0,
-      "vitC": 0,
-      "calcium": 0,
-      "iron": 0
-   },
    "Banana Peppers (3 rings)": {
       "servingSize": 4,
       "calories": 0,
@@ -135,7 +118,7 @@
       "calcium": 0,
       "iron": 0
    },
-   "Olives, Black (3 rings)": {
+   "Black Olives (3 rings)": {
       "servingSize": 3,
       "calories": 0,
       "totalFat": 0,

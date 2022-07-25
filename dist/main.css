@@ -35,7 +35,7 @@ body {
   height: 100%;
 }
 
-.all-breads, .all-cheese, .all-meat, .single-sandwich {
+.all-breads, .all-cheese, .all-meat, .single-sandwich, .all-toppings {
   width: 35px;
   height: auto;
 }
