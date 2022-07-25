@@ -1,5 +1,5 @@
 const {config} = require("./scripts/chart.js");
-const {updateChart, clearChart, showList, doubleIt} = require("./scripts/list.js");
+//const {updateChart, clearChart, showList, doubleIt} = require("./scripts/list.js");
 // const {allItems} = require("./scripts/data.js");
 //const {getData} = require("./scripts/options.js");
 //const updateChart = chart => {};
@@ -11,7 +11,7 @@ import ChartUtils from './scripts/chart_utils';
 
 document.addEventListener("DOMContentLoaded", () => {
     const ctx = document.getElementById("canvas-chart").getContext("2d");
-    const myChart = new Chart(ctx, config);
+    //const myChart = new Chart(ctx, config);
 
     // updateChart(myChart);
     // clearChart(myChart);
@@ -19,29 +19,28 @@ document.addEventListener("DOMContentLoaded", () => {
     // doubleIt(myChart);
 
     let listItems = new ListItems();
-    let chart = new ChartUtils();
+    let chart = new ChartUtils(ctx, config);
 
     const liCollection = document.getElementsByClassName("option");
 
-    listItems.showList();
+    listItems.toggleList();
     
     for (let i = 0; i < liCollection.length; i++) {
-        let li = new Item(liCollection[i]);
+        let li = liCollection[i];
         li.addEventListener("click", e => {
-            if (li.attribute) {
-                li.resetAttribute();
-                listItems.deleteFromList(li.liInnerText);
+            let liItem = new Item(li);
+            if (liItem.attribute) {
+                liItem.resetAttribute();
+                listItems.deleteFromList(liItem.liInnerText);
                 listItems.resetStructuredList();
-                listItems.createList();
-                chart.subtractFromChart(li.liInnerText);
-                return chart.update();
+                listItems.createStructuredList();
+                chart.subtractFromChart(liItem.liInnerText);
             } else {
-                li.setAttributeYes();
-                listItems.addToList(li.liInnerText);
+                liItem.setAttributeYes();
+                listItems.addToList(liItem.liInnerText);
                 listItems.resetStructuredList();
-                listItems.createList();
-                chart.addToChart(li.liInnerText);
-                return chart.update();
+                listItems.createStructuredList();
+                chart.addToChart(liItem.liInnerText);
             }
         })
     }
@@ -51,6 +50,7 @@ document.addEventListener("DOMContentLoaded", () => {
     liClear.addEventListener("click", e => {
         listItems.clearList();
         listItems.resetStructuredList();
+        listItems.createStructuredList();
         chart.clearChart();
         for (let i = 0; i < liCollection.length; i++) {
             let li = new Item(liCollection[i]);

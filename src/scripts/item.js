@@ -15,11 +15,11 @@ export default class Item {
 
     setAttributeYes() {
         this.attribute = true;
-        this.li.setAttribute("clicked", yes);
+        this.li.setAttribute("clicked", "yes");
     }
 
     resetAttribute() {
         this.attribute = false;
-        this.li.setAttribute("clicked", no)
+        this.li.setAttribute("clicked", "no")
     }
 }
