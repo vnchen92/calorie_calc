@@ -1,4 +1,5 @@
-const {config, updateChart, clearChart, showList, doubleIt} = require("./scripts/chart.js");
+const {config} = require("./scripts/chart.js");
+const {updateChart, clearChart, showList, doubleIt} = require("./scripts/list.js");
 // const {allItems} = require("./scripts/data.js");
 //const {getData} = require("./scripts/options.js");
 //const updateChart = chart => {};
@@ -12,8 +13,3 @@ document.addEventListener("DOMContentLoaded", () => {
     showList();
     doubleIt(myChart);
 });
-
-
-//import all js files here, require
-//use window.#whatver class you have to  to test things
-// window.GameClass = Game
