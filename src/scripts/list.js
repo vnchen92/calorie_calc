@@ -1,5 +1,6 @@
-const { allItems } = require("./data.js");
+//const { allItems } = require("./data.js");
 
+import allItems from './data'
 
 export default class ListItems {
     constructor() {
