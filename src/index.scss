@@ -55,15 +55,33 @@ body {
   height: auto;
 }
 
+.add-button, .subtract-button {
+  width: 20px;
+  height: auto;
+}
+
+.add-sub-container {
+  display: flex;
+  margin-left: 2px;
+}
+
+
 .content {
+  //box-sizing: border-box;
   display: none;
-  margin-top: 10px;
-  margin-bottom: 10px;
-  margin-right: 5px;
-  margin-left: 5px;
-  grid-template-columns: 100px 100px 100px 100px 100px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-right: 5px;
+  padding-left: 5px;
+  grid-template-columns: 125px 125px 125px 125px 125px;
   column-gap: 5px;
   row-gap: 5px;
+  // background-color: rgb(161, 108, 38);
+  background-color: rgb(215, 149, 63, .5);
+  //background-color: rgba(250, 249, 247, .5);
+  border: 1px solid rgba(204, 147, 73);
+  position: relative;
+  bottom: 1px;
 }
 
 header {
@@ -172,12 +190,26 @@ li > a > img {
   padding-right: 20px;
   padding-top: 14px;
   padding-bottom: 14px;
-  cursor: pointer;
+  //cursor: pointer;
   //border: 1px solid rgb(183, 128, 56);
 }
 
 #item-name-bread.active, #item-name-cheese.active, #item-name-protein.active, #item-name-toppings.active, #item-name-condiments.active {
-  background-color: rgb(164, 104, 25);
+  background-color: rgb(161, 108, 38);
+  //background-color: rgb(215, 149, 63, .5);
+  position: relative;
+  z-index: 1;
+  box-sizing: border-box;
+  border-top: 1px solid rgba(204, 147, 73);
+  border-left: 1px solid rgba(204, 147, 73);
+  border-right: 1px solid rgba(204, 147, 73);
+}
+
+.item-name-rest {
+  display: flex;
+  justify-content: right;
+  margin-top: 5px;
+  margin-bottom: 5px;
 }
 
 
@@ -199,11 +231,11 @@ li[clicked="yes"] {
 .option {
   display: flex;
   border: 1px solid rgb(39, 162, 84);
-  width: 100px;
-  height: 40px;
+  width: 125px;
+  height: 45px;
   box-sizing: border-box;
   border-radius: 7%;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
   text-align: center;
   font-size: 10px;
@@ -214,6 +246,7 @@ li[clicked="yes"] {
 .options-container {
   display: inline-block;
   text-align: center;
+  margin-top: 10px;
 }
 
 // .right-create {
@@ -232,6 +265,7 @@ li[clicked="yes"] {
   display: flex;
   border: 1px solid rgb(164, 104, 25);
   background-color: rgb(215, 149, 63);
+  margin-left: 5px;
   width: 100px;
   height: 40px;
   box-sizing: border-box;

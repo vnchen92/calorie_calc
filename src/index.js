@@ -29,21 +29,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const allNames = [breadName, cheeseName, proteinName, toppingName, condimentName];
     const hiddenContent = document.getElementsByClassName("content")
 
-    // function openOption(e, containerName) {
-    //     let contents = document.getElementsByClassName("option")
-    //     for (i = 0; i < contents.length; i++) {
-    //         contents[i].style.display = "none";
-    //     }
-    //     let itemLinks = document.getElementsByClassName("item-links");
-    //     for (let i = 0; i < itemLinks.length; i++) {
-    //         let item = itemLinks[i];
-    //         item.className = item.className.replace(":active", "")
-    //     }
-
-    //     document.getElementById(containerName).style.display = "grid";
-    //     e.currentTarget.className += ":active"
-    // }
-
     const removeActive = () => {
         for (let i = 0; i < allNames.length; i++) {
             let name = allNames[i];
@@ -59,7 +44,6 @@ document.addEventListener("DOMContentLoaded", () => {
     breadName.addEventListener("click", e => {
         removeActive();
         e.currentTarget.className += " active";
-        debugger
         const breadDiv = document.getElementById("bread-container")
         if (breadDiv.style.display === "none") {
             breadDiv.style.display = "grid";
@@ -71,7 +55,6 @@ document.addEventListener("DOMContentLoaded", () => {
     cheeseName.addEventListener("click", e => {
         removeActive();
         e.currentTarget.className += " active";
-        debugger
         const cheeseDiv = document.getElementById("cheese-container")
         if (cheeseDiv.style.display === "none") {
             cheeseDiv.style.display = "grid";
@@ -114,8 +97,27 @@ document.addEventListener("DOMContentLoaded", () => {
     })
 
     const liCollection = document.getElementsByClassName("option");
+    for (let i = 0; i < liCollection.length; i++) {
+        let li = liCollection[i];
+        let liDiv = document.createElement("div");
+        liDiv.className = "add-sub-container";
+        li.appendChild(liDiv);
+        let add = document.createElement("img");
+        add.className = "add-button"
+        add.id = `add-button-${li.innerText}`;
+        add.src = "../assets/images/add_button.png";
+        let subtract = document.createElement("img");
+        subtract.className = "subtract-button";
+        subtract.id = `subtract-button-${li.innerText}`;
+        subtract.src = "../assets/images/subtract.png";
+        liDiv.appendChild(add);
+        liDiv.appendChild(subtract);
+    }
+
 
     listItems.toggleList();
+
+    
     
     for (let i = 0; i < liCollection.length; i++) {
         let li = liCollection[i];
