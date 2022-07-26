@@ -55,25 +55,35 @@ body {
   height: auto;
 }
 
-#bread-container {
+.content {
   display: none;
+  grid-template-columns: 100px 100px 100px 100px 100px 100px;
 }
 
-#cheese-container {
-  display: none;
-}
+// #bread-container {
+//   display: none;
+//   grid-template-columns: 100px 100px 100px 100px 100px 100px;
+// }
 
-#protein-container {
-  display: none;
-}
+// #cheese-container {
+//   display: none;
+//   grid-template-columns: 100px 100px 100px 100px 100px 100px;
+// }
 
-#topping-container {
-  display: none;
-}
+// #protein-container {
+//   display: none;
+//   grid-template-columns: 100px 100px 100px 100px 100px 100px;
+// }
 
-#condiment-container {
-  display: none;
-}
+// #topping-container {
+//   display: none;
+//   grid-template-columns: 100px 100px 100px 100px 100px 100px;
+// }
+
+// #condiment-container {
+//   display: none;
+//   grid-template-columns: 100px 100px 100px 100px 100px 100px;
+// }
 
 header {
   height: 100px;
@@ -158,6 +168,56 @@ li > a > img {
   height: 25px;
 }
 
+.options {
+  display: flex;
+  justify-content: space-evenly;
+  width: 600px;
+  align-items: center;
+  //border: 1px solid rgb(164, 104, 25);
+  background-color: rgb(215, 149, 63);
+}
+
+#item-name-bread, #item-name-cheese, #item-name-protein, #item-name-toppings, #item-name-condiments {
+  background-color: inherit;
+  padding-left: 14px;
+  padding-right: 14px;
+  padding-top: 14px;
+  padding-bottom: 14px;
+  transition: 0.3s;
+  cursor: pointer;
+}
+// .item-links {
+//   background-color: inherit;
+//   padding-left: 14px;
+//   padding-right: 14px;
+//   padding-top: 14px;
+//   padding-bottom: 14px;
+//   transition: 0.3s;
+//   cursor: pointer;
+// }
+
+#item-name-bread:hover, #item-name-cheese:hover, #item-name-protein:hover, #item-name-toppings:hover, #item-name-condiments:hover {
+  background-color: rgb(183, 128, 56);
+  cursor: pointer;
+  //border: 1px solid rgb(183, 128, 56);
+}
+// .item-links:hover {
+//   background-color: rgb(183, 128, 56);
+//   width: inherit;
+//   //border: 1px solid rgb(183, 128, 56);
+// }
+
+#item-name-bread:active, #item-name-cheese:active, #item-name-protein:active, #item-name-toppings:active, #item-name-condiments:active {
+  //background-color: rgb(164, 104, 25);
+  background-color: aliceblue;
+  cursor: pointer;
+}
+
+// .item-links:active {
+//   background-color: rgb(164, 104, 25);
+//   width: inherit;
+// }
+
 // .options {
 //   display: grid;
 //   grid-template-columns: 100px 100px 100px 100px 100px 100px;
@@ -200,17 +260,17 @@ li[clicked="yes"] {
   text-align: center;
 }
 
-.right-create {
-  box-sizing: border-box;
-  border: 1px solid rgb(164, 104, 25);
-  background-color: rgb(215, 149, 63);
-  border-radius: 2%;
-  width: 620px;
-  padding: 3px;
-  margin-left: auto;
-  margin-top: 5px;
-  margin-bottom: -5px;
-}
+// .right-create {
+//   box-sizing: border-box;
+//   border: 1px solid rgb(164, 104, 25);
+//   background-color: rgb(215, 149, 63);
+//   border-radius: 2%;
+//   width: 620px;
+//   padding: 3px;
+//   margin-left: auto;
+//   margin-top: 5px;
+//   margin-bottom: -5px;
+// }
 
 .clear-button, #selected-list {
   display: flex;
@@ -252,15 +312,15 @@ li[clicked="yes"] {
   visibility: visible;
 }
 
-#twelve.active {
-  box-sizing: border-box;
-  border: 2px solid rgb(164, 104, 25);
-  background-color: rgb(215, 149, 63);
-  border-radius: 2%;
-  width: 620px;
-  padding: 3px;
-  margin-left: auto;
-  margin-top: 5px;
-  margin-bottom: -5px;
-  cursor: pointer;
-}
+// #twelve.active {
+//   box-sizing: border-box;
+//   border: 2px solid rgb(164, 104, 25);
+//   background-color: rgb(215, 149, 63);
+//   border-radius: 2%;
+//   width: 620px;
+//   padding: 3px;
+//   margin-left: auto;
+//   margin-top: 5px;
+//   margin-bottom: -5px;
+//   cursor: pointer;
+// }

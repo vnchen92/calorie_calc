@@ -27,49 +27,89 @@ document.addEventListener("DOMContentLoaded", () => {
     const condimentName = document.getElementById("item-name-condiments");
 
     const allNames = [breadName, cheeseName, proteinName, toppingName, condimentName];
+    const hiddenContent = document.getElementsByClassName("content")
+
+    // function openOption(e, containerName) {
+    //     let contents = document.getElementsByClassName("option")
+    //     for (i = 0; i < contents.length; i++) {
+    //         contents[i].style.display = "none";
+    //     }
+    //     let itemLinks = document.getElementsByClassName("item-links");
+    //     for (let i = 0; i < itemLinks.length; i++) {
+    //         let item = itemLinks[i];
+    //         item.className = item.className.replace(":active", "")
+    //     }
+
+    //     document.getElementById(containerName).style.display = "grid";
+    //     e.currentTarget.className += ":active"
+    // }
+
+    const removeActive = () => {
+        for (let i = 0; i < allNames.length; i++) {
+            let name = allNames[i];
+            name.id = name.id.replace(":active", "")
+        }
+        for(let i = 0; i < hiddenContent.length; i++) {
+            let content = hiddenContent[i];
+            content.style.display = "none"
+        }
+    }
+
 
     breadName.addEventListener("click", e => {
+        removeActive();
+        e.currentTarget.id += ":active";
+        debugger
         const breadDiv = document.getElementById("bread-container")
         if (breadDiv.style.display === "none") {
-            breadDiv.style.display = "block";
+            breadDiv.style.display = "grid";
             } else {
             breadDiv.style.display = "none";
             }
     })
 
     cheeseName.addEventListener("click", e => {
-        const breadDiv = document.getElementById("cheese-container")
-        if (breadDiv.style.display === "none") {
-            breadDiv.style.display = "block";
+        removeActive();
+        e.currentTarget.id += ":active";
+        debugger
+        const cheeseDiv = document.getElementById("cheese-container")
+        if (cheeseDiv.style.display === "none") {
+            cheeseDiv.style.display = "grid";
             } else {
-            breadDiv.style.display = "none";
+            cheeseDiv.style.display = "none";
             }
     })
 
     proteinName.addEventListener("click", e => {
-        const breadDiv = document.getElementById("protein-container")
-        if (breadDiv.style.display === "none") {
-            breadDiv.style.display = "block";
+        removeActive();
+        e.currentTarget.id += ":active";
+        const proteinDiv = document.getElementById("protein-container")
+        if (proteinDiv.style.display === "none") {
+            proteinDiv.style.display = "grid";
             } else {
-            breadDiv.style.display = "none";
+            proteinDiv.style.display = "none";
             }
     })
 
     toppingName.addEventListener("click", e => {
-        const breadDiv = document.getElementById("topping-container")
-        if (breadDiv.style.display === "none") {
-            breadDiv.style.display = "block";
+        removeActive();
+        e.currentTarget.id += ":active";
+        const toppingDiv = document.getElementById("topping-container")
+        if (toppingDiv.style.display === "none") {
+            toppingDiv.style.display = "grid";
             } else {
-            breadDiv.style.display = "none";
+            toppingDiv.style.display = "none";
             }
     })
 
     condimentName.addEventListener("click", e => {
-        const breadDiv = document.getElementById("condiment-container")
-        if (breadDiv.style.display === "none") {
-            breadDiv.style.display = "block";
+        removeActive();
+        e.currentTarget.id += ":active";
+        const condimentDiv = document.getElementById("condiment-container")
+        if (condimentDiv.style.display === "none") {
+            condimentDiv.style.display = "grid";
             } else {
-            breadDiv.style.display = "none";
+            condimentDiv.style.display = "none";
             }
     })
 
