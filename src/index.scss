@@ -55,6 +55,26 @@ body {
   height: auto;
 }
 
+#bread-container {
+  display: none;
+}
+
+#cheese-container {
+  display: none;
+}
+
+#protein-container {
+  display: none;
+}
+
+#topping-container {
+  display: none;
+}
+
+#condiment-container {
+  display: none;
+}
+
 header {
   height: 100px;
 }
@@ -138,12 +158,19 @@ li > a > img {
   height: 25px;
 }
 
-.options {
-  display: grid;
-  grid-template-columns: 100px 100px 100px 100px 100px 100px;
-  column-gap: 5px;
-  row-gap: 5px;
-}
+// .options {
+//   display: grid;
+//   grid-template-columns: 100px 100px 100px 100px 100px 100px;
+//   column-gap: 5px;
+//   row-gap: 5px;
+// }
+
+// .item-name {
+//   display: grid;
+//   grid-template-columns: 100px 100px 100px 100px 100px 100px;
+//   column-gap: 5px;
+//   row-gap: 5px;
+// }
 
 .option:hover {
   background-color: rgb(39, 162, 84, .5);
@@ -168,12 +195,12 @@ li[clicked="yes"] {
   cursor: pointer;
 }
 
-.twelve-container {
+.options-container {
   display: inline-block;
   text-align: center;
 }
 
-#twelve {
+.right-create {
   box-sizing: border-box;
   border: 1px solid rgb(164, 104, 25);
   background-color: rgb(215, 149, 63);
@@ -183,7 +210,6 @@ li[clicked="yes"] {
   margin-left: auto;
   margin-top: 5px;
   margin-bottom: -5px;
-  cursor: pointer;
 }
 
 .clear-button, #selected-list {

@@ -14,6 +14,65 @@ document.addEventListener("DOMContentLoaded", () => {
     let chart = new ChartUtils(ctx, config);
     let listItems = new ListItems();
 
+    // const allBreads = document.getElementsByClassName("all-breads");
+    // const allCheeses = document.getElementsByClassName("all-cheese");
+    // const allProteins = document.getElementsByClassName("all-meat");
+    // const allToppings = document.getElementsByClassName("all-toppings");
+    // const allCondiments = document.getElementsByClassName("all-condiments");
+
+    const breadName = document.getElementById("item-name-bread")
+    const cheeseName = document.getElementById("item-name-cheese")
+    const proteinName = document.getElementById("item-name-protein")
+    const toppingName = document.getElementById("item-name-toppings");
+    const condimentName = document.getElementById("item-name-condiments");
+
+    const allNames = [breadName, cheeseName, proteinName, toppingName, condimentName];
+
+    breadName.addEventListener("click", e => {
+        const breadDiv = document.getElementById("bread-container")
+        if (breadDiv.style.display === "none") {
+            breadDiv.style.display = "block";
+            } else {
+            breadDiv.style.display = "none";
+            }
+    })
+
+    cheeseName.addEventListener("click", e => {
+        const breadDiv = document.getElementById("cheese-container")
+        if (breadDiv.style.display === "none") {
+            breadDiv.style.display = "block";
+            } else {
+            breadDiv.style.display = "none";
+            }
+    })
+
+    proteinName.addEventListener("click", e => {
+        const breadDiv = document.getElementById("protein-container")
+        if (breadDiv.style.display === "none") {
+            breadDiv.style.display = "block";
+            } else {
+            breadDiv.style.display = "none";
+            }
+    })
+
+    toppingName.addEventListener("click", e => {
+        const breadDiv = document.getElementById("topping-container")
+        if (breadDiv.style.display === "none") {
+            breadDiv.style.display = "block";
+            } else {
+            breadDiv.style.display = "none";
+            }
+    })
+
+    condimentName.addEventListener("click", e => {
+        const breadDiv = document.getElementById("condiment-container")
+        if (breadDiv.style.display === "none") {
+            breadDiv.style.display = "block";
+            } else {
+            breadDiv.style.display = "none";
+            }
+    })
+
     const liCollection = document.getElementsByClassName("option");
 
     listItems.toggleList();
