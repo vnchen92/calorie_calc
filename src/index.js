@@ -47,7 +47,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const removeActive = () => {
         for (let i = 0; i < allNames.length; i++) {
             let name = allNames[i];
-            name.id = name.id.replace(":active", "")
+            name.className = name.className.replace(" active", "")
         }
         for(let i = 0; i < hiddenContent.length; i++) {
             let content = hiddenContent[i];
@@ -58,7 +58,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     breadName.addEventListener("click", e => {
         removeActive();
-        e.currentTarget.id += ":active";
+        e.currentTarget.className += " active";
         debugger
         const breadDiv = document.getElementById("bread-container")
         if (breadDiv.style.display === "none") {
@@ -70,47 +70,47 @@ document.addEventListener("DOMContentLoaded", () => {
 
     cheeseName.addEventListener("click", e => {
         removeActive();
-        e.currentTarget.id += ":active";
+        e.currentTarget.className += " active";
         debugger
         const cheeseDiv = document.getElementById("cheese-container")
         if (cheeseDiv.style.display === "none") {
             cheeseDiv.style.display = "grid";
-            } else {
-            cheeseDiv.style.display = "none";
-            }
+        } else {
+        cheeseDiv.style.display = "none";
+        }
     })
 
     proteinName.addEventListener("click", e => {
         removeActive();
-        e.currentTarget.id += ":active";
+        e.currentTarget.className += " active";
         const proteinDiv = document.getElementById("protein-container")
         if (proteinDiv.style.display === "none") {
             proteinDiv.style.display = "grid";
-            } else {
-            proteinDiv.style.display = "none";
-            }
+        } else {
+        proteinDiv.style.display = "none";
+        }
     })
 
     toppingName.addEventListener("click", e => {
         removeActive();
-        e.currentTarget.id += ":active";
+        e.currentTarget.className += " active";
         const toppingDiv = document.getElementById("topping-container")
         if (toppingDiv.style.display === "none") {
             toppingDiv.style.display = "grid";
-            } else {
-            toppingDiv.style.display = "none";
-            }
+        } else {
+        toppingDiv.style.display = "none";
+        }
     })
 
     condimentName.addEventListener("click", e => {
         removeActive();
-        e.currentTarget.id += ":active";
+        e.currentTarget.className += " active";
         const condimentDiv = document.getElementById("condiment-container")
         if (condimentDiv.style.display === "none") {
             condimentDiv.style.display = "grid";
-            } else {
-            condimentDiv.style.display = "none";
-            }
+        } else {
+        condimentDiv.style.display = "none";
+        }
     })
 
     const liCollection = document.getElementsByClassName("option");
