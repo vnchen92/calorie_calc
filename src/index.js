@@ -109,10 +109,10 @@ document.addEventListener("DOMContentLoaded", () => {
         li.appendChild(liDiv);
         let add = document.createElement("img");
         add.className = "add-button"
-        add.src = "https://cdn.discordapp.com/attachments/1001881129546158254/1001911989330776084/add_button.png";
+        add.src = "images/add_button.png";
         let subtract = document.createElement("img");
         subtract.className = "subtract-button";
-        subtract.src = "https://cdn.discordapp.com/attachments/1001881129546158254/1001912080162635876/subtract.png";
+        subtract.src = "images/subtract.png";
         liDiv.appendChild(add);
         liDiv.appendChild(subtract);
 
