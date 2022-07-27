@@ -109,10 +109,10 @@ document.addEventListener("DOMContentLoaded", () => {
         li.appendChild(liDiv);
         let add = document.createElement("img");
         add.className = "add-button"
-        add.src = "https://github.com/vnchen92/calorie_calc/blob/main/assets/images/add_button.png?raw=true";
+        add.src = require("./assets/images/add_button.png");
         let subtract = document.createElement("img");
         subtract.className = "subtract-button";
-        subtract.src = "/calorie_calc/assets/images/subtract.png";
+        subtract.src = require("./assets/images/subtract.png");
         liDiv.appendChild(add);
         liDiv.appendChild(subtract);
 
