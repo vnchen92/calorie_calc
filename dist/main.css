@@ -105,13 +105,15 @@ header {
   position: relative;
   top: 20px;
   width: 25%;
-  justify-content: space-evenly;
+  margin-right: 10px;
   align-items: baseline;
 }
 
 li > a > img {
   width: 40px;
   height: auto;
+  padding-left: 5px;
+  padding-right: 5px;
 }
 
 .canvas-and-options {
