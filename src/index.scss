@@ -86,7 +86,7 @@ body {
   padding-top: 10px;
   padding-bottom: 10px;
   padding-right: 5px;
-  padding-left: 45px;
+  padding-left: 95px;
   width: 650px;
   background-color: rgb(215, 149, 63, .5);
   border: 1px solid rgba(204, 147, 73);
@@ -127,8 +127,26 @@ header {
 li > a > img {
   width: 40px;
   height: auto;
-  padding-left: 5px;
-  padding-right: 5px;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.mine-angellist > a > img {
+  width: 40px;
+  height: auto;
+  margin-left: 5px;
+  margin-right: 5px;
+  background-color: #39f082;
+  border-radius: 5%;
+}
+
+.mine-portfolio > a > img {
+  width: 40px;
+  height: auto;
+  margin-left: 5px;
+  margin-right: 5px;
+  background-color:#f9f35a;
+  border-radius: 5%;
 }
 
 .canvas-and-options {
@@ -247,6 +265,11 @@ li[clicked="yes"] {
   display: inline-block;
   text-align: center;
   margin-top: 10px;
+}
+
+.clear {
+  width: 50px;
+  height: auto;
 }
 
 .clear-button, #selected-list {
