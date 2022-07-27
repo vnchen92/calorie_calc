@@ -109,10 +109,10 @@ document.addEventListener("DOMContentLoaded", () => {
         li.appendChild(liDiv);
         let add = document.createElement("img");
         add.className = "add-button"
-        add.src = "images/add_button.png";
+        add.src = "./assets/images/add_button.png";
         let subtract = document.createElement("img");
         subtract.className = "subtract-button";
-        subtract.src = "images/subtract.png";
+        subtract.src = "./assets/images/subtract.png";
         liDiv.appendChild(add);
         liDiv.appendChild(subtract);
 
