@@ -5,14 +5,6 @@ export default class Item {
         this.attribute = false;
     }
 
-    // updateAttribute() {
-    //     if (this.li.getAttribute("clicked") === "no"){
-    //         this.li.setAttribute("clicked", "yes");
-    //     } else {
-    //         this.li.setAttribute("clicked", no);
-    //     }
-    // }
-
     setAttributeYes() {
         this.attribute = true;
         this.li.setAttribute("clicked", "yes");

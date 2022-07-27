@@ -1,13 +1,16 @@
-//const { allItems } = require("./data.js");
-
-import allItems from './data'
-
 export default class ListItems {
     constructor() {
         this.liSelectedList = document.getElementById("selected-list");
         this.ulItemList = document.getElementById("selected-list-text");
         this.clickedListItems = {};
         this.structuredList = "";
+    }
+
+    isItemInList(item) {
+        if (this.clickedListItems[item] > 0) {
+            return true;
+        }
+        return false;
     }
 
     addToList(item) {
@@ -19,7 +22,9 @@ export default class ListItems {
     }
 
     deleteFromList(item) {
-        this.clickedListItems[item] -= 1;
+        if (this.isItemInList(item)) {
+            this.clickedListItems[item] -= 1;
+        }
     }
 
     resetStructuredList() {
@@ -29,7 +34,7 @@ export default class ListItems {
     createStructuredList() {
         if (Object.values(this.clickedListItems).length > 0) {
             for (let item in this.clickedListItems) {
-                if (this.clickedListItems[item] > 0) {
+                if (this.isItemInList(item)) {
                     this.structuredList += item + ": " + this.clickedListItems[item] + "\n";
                 }
             }

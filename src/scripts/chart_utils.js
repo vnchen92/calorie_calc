@@ -1,12 +1,18 @@
-//const { allItems } = require("./data.js");
-
 import allItems from './data';
 
 export default class ChartUtils {
-    constructor(ctx, config) {
+    constructor(ctx, config, clickedListItems) {
         this.chart = new Chart(ctx, config);
         this.numElement = document.getElementById("total-cal-num");
         this.datasetObj = this.chart.config.data.datasets[0];
+        this.clickedListItems = clickedListItems;
+    }
+
+    isItemInList(itemName) {
+        if (this.clickedListItems[itemName] > 0){
+            return true;
+        }
+        return false
     }
 
     addToChart(itemName) {
@@ -19,12 +25,14 @@ export default class ChartUtils {
     }
 
     subtractFromChart(itemName) {
-        let nameOfItem = allItems[itemName];
-        datasetObj.data[0] -= (nameOfItem.protein * 4);
-        datasetObj.data[1] -= (nameOfItem.carb * 4);
-        datasetObj.data[2] -= (nameOfItem.totalFat * 9);
-        this.numElement.innerText -= ((nameOfItem.protein * 4) + (nameOfItem.carb * 4) + (nameOfItem.totalFat * 9));
-        return this.chart.update();
+        if (this.isItemInList(itemName)) {
+            let nameOfItem = allItems[itemName];
+            this.datasetObj.data[0] -= (nameOfItem.protein * 4);
+            this.datasetObj.data[1] -= (nameOfItem.carb * 4);
+            this.datasetObj.data[2] -= (nameOfItem.totalFat * 9);
+            this.numElement.innerText -= ((nameOfItem.protein * 4) + (nameOfItem.carb * 4) + (nameOfItem.totalFat * 9));
+            return this.chart.update();
+        }
     }
 
     clearChart() {

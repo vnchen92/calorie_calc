@@ -52,6 +52,7 @@ body {
 
 .content {
   display: none;
+  box-sizing: border-box;
   padding-top: 10px;
   padding-bottom: 10px;
   padding-right: 5px;
@@ -63,6 +64,20 @@ body {
   border: 1px solid rgb(204, 147, 73);
   position: relative;
   bottom: 1px;
+}
+
+.info-content {
+  box-sizing: border-box;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-right: 5px;
+  padding-left: 45px;
+  width: 650px;
+  background-color: rgba(215, 149, 63, 0.5);
+  border: 1px solid rgb(204, 147, 73);
+  position: relative;
+  bottom: 1px;
+  text-align: left;
 }
 
 header {
@@ -153,7 +168,7 @@ li > a > img {
   background-color: rgb(215, 149, 63);
 }
 
-#item-name-bread, #item-name-cheese, #item-name-protein, #item-name-toppings, #item-name-condiments {
+#item-info, #item-name-bread, #item-name-cheese, #item-name-protein, #item-name-toppings, #item-name-condiments {
   background-color: rgb(215, 149, 63);
   padding-left: 20px;
   padding-right: 20px;
@@ -163,7 +178,7 @@ li > a > img {
   cursor: pointer;
 }
 
-#item-name-bread:hover, #item-name-cheese:hover, #item-name-protein:hover, #item-name-toppings:hover, #item-name-condiments:hover {
+#item-info:hover, #item-name-bread:hover, #item-name-cheese:hover, #item-name-protein:hover, #item-name-toppings:hover, #item-name-condiments:hover {
   background-color: rgb(183, 128, 56);
   padding-left: 20px;
   padding-right: 20px;
@@ -171,7 +186,7 @@ li > a > img {
   padding-bottom: 14px;
 }
 
-#item-name-bread.active, #item-name-cheese.active, #item-name-protein.active, #item-name-toppings.active, #item-name-condiments.active {
+#item-info.active, #item-name-bread.active, #item-name-cheese.active, #item-name-protein.active, #item-name-toppings.active, #item-name-condiments.active {
   background-color: rgb(161, 108, 38);
   position: relative;
   z-index: 1;
