@@ -228,7 +228,7 @@ li > a > img {
 }
 
 .option:hover {
-  background-color: rgba(39, 162, 84, 0.5);
+  background-color: rgb(39, 162, 84);
 }
 
 li[clicked=yes] {
@@ -247,7 +247,11 @@ li[clicked=yes] {
   text-align: center;
   font-size: 10px;
   background-color: #39f082;
-  cursor: pointer;
+}
+
+.option:active {
+  transform: scale(0.95);
+  box-shadow: 3px 2px 15px 1px rgba(0, 0, 0, 0.24);
 }
 
 .options-container {
