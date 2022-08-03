@@ -1,4 +1,4 @@
-### [Eat Deliberately](https://vnchen92.github.io/calorie_calc/)
+# [Eat Deliberately](https://vnchen92.github.io/calorie_calc/)
 
 ![](https://github.com/vnchen92/calorie_calc/blob/main/assets/images/js-better-full.jpg?raw=true)
 
