@@ -1,3 +1,5 @@
+![](https://github.com/vnchen92/calorie_calc/blob/main/assets/images/js-better-full.jpg?raw=true)
+
 ## Background
 
 Track your macronutrients (macros) and calories at Subway if you are calorie conscious or macro conscious. Customize your sandwich and see how much protein, carb, and fat you are consuming. Visualize your macros and calories dynamically on a bar chart as you update and edit your options. View what you have already selected either on a list or as you make your sandwich.
